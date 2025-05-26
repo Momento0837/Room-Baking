@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃7</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding:0 auto;
+            box-sizing:border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+
+        .main{
+            position:relative;
+            width:100vw;
+            height:100vh;
+            display:flex;
+            align-items:center;
+        }
+        .frame{/*500x700*/
+            width:26vw;
+            height:64vh;
+        }
+
+        .frameimg{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="frame">
+            <img src="images/frame2.png" alt="Frame" class="frameimg">
+        </div>
+    </div>
+</body>
+</html>
