@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃9</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding:0 auto;
+            box-sizing:border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+
+        .main{
+            position:relative;
+            width:100vw;
+            height:100vh;
+        }
+        
+        .table{/*1920x300*/
+            position:absolute;
+            width:100vw;
+            height:27vh;
+            bottom:0;
+        }
+        .tableimg{
+            width:100%;
+            height:100%;
+        }
+
+        .moniter{
+            position:absolute;
+            width:41vw;
+            height:52vh;
+            right:17%;
+            bottom:27%;
+        }
+        .moniterimg{
+            width:100%;
+            height:100%;
+        }
+        .speaker{
+            position:absolute;
+            width:100vw;
+            height:27vh;
+            bottom:27%;
+            display:flex;
+            justify-content:center;
+            margin:0;
+        }
+        .speaker > .item:nth-child(1){
+            width:10vw;
+            height:27vh;
+            margin-left:50px;
+        }
+
+        .speaker > .item:nth-child(2){
+            width:10vw;
+            height:27vh;
+            margin-right:50px;
+        }
+        .speakerimg{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="table">
+            <img src="images/tableL.png" alt="Table" class="tableimg">
+        </div>
+        <div class="moniter">
+            <img src="images/moniter.png" alt="Moniter" class="moniterimg">
+        </div>
+        <div class="speaker">
+            <div class="item">
+                <img src="images/speaker.png" alt="Speaker" class="speakerimg">
+            </div>
+            <div class="item">
+                <img src="images/speaker.png" alt="Speaker" class="speakerimg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃5</title>
+    <style>
+
+        :root{
+            --bg-gradient-01: #f1ffe7;
+            --bg-gradient-02: #ccf3b2;
+        }
+
+        * {
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+            /*background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));*/
+        }
+
+        .main {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .whiteboard{/*1300x800*/
+            position:absolute;
+            width:33vw;
+            height:37vh;
+            left:5%;
+            top:15%;
+        }
+        .whiteboardimg{
+            width:100%;
+            height:100%;
+        }
+
+        .brush{/*400x650*/
+            position:absolute;
+            width:13vw;
+            height:40vh;
+            left:9%;
+            bottom:0;
+            transform:scale(-1, 1);
+        }
+        .brushimg{
+            width:100%;
+            height:100%;
+        }
+
+        .frame{/*500x700*/
+            position:absolute;
+            width:45vw;
+            height:22vh;
+            right:0;
+            top:12%;
+            display:flex;
+            justify-content:center;
+            gap:40%;
+        }
+
+        .frame > .item:nth-child(2n+1){
+            width:8vw;
+            height:20vh;
+            background-color:#ff3692;
+            margin:0;
+        }
+        
+        .frame > .item:nth-child(2){
+            position:absolute;
+            width:8vw;
+            height:20vh;
+            bottom:0;
+            background-color:#ff3692;
+            margin:0;
+        }
+
+        .frameimg{
+            width:100%;
+            height:100%;
+        }
+        
+        .table{
+            position:absolute;
+            width: 55vw;
+            height: 22vh;
+            right: 0;
+            bottom: 0;
+        }
+        .tableimg{
+            width:100%;
+            height:100%;
+        }
+        
+        .moniter{/*800x570*/
+            position:absolute;
+            width:20vw;
+            height:26vh;
+            right:12%;
+            bottom:22%;
+        }
+        .moniterimg{
+            width:100%;
+            height:100%;
+        }
+
+        .speaker{/*200x300*/
+            position:absolute;
+            width:55vw;
+            height:17vh;
+            right:0;
+            bottom:22%;
+            display:flex;
+            justify-content:center;
+            gap:65%;
+        }
+        .speaker > .item{
+            width:6vw;
+            height:17vh;
+            margin:0;
+        }
+        .speakerimg{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="whiteboard">
+            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboard">
+        </div>
+        <div class="brush">
+            <img src="images/brush.png" alt="Brush" class="brushimg">
+        </div>
+        <div class="frame">
+            <div class="item">
+                <img src="images/frame2.png" alt="Frame1" class="frameimg">
+            </div>
+            <div class="item">
+                <img src="images/frame2.png" alt="Frame2" class="frameimg">
+            </div>
+            <div class="item">
+                <img src="images/frame2.png" alt="Frame3" class="frameimg">
+            </div>
+        </div>
+        <div class="table">
+            <img src="images/tableS.png" alt="Table" class="tableimg">
+        </div>
+        <div class="moniter">
+            <img src="images/moniter.png" alt="Moniter" class="moniterimg">
+        </div>
+        <div class="speaker">
+            <div class="item">
+                <img src="images/speaker.png" alt="Speaker1" class="speakerimg">
+            </div>
+            <div class="item">
+                <img src="images/speaker.png" alt="Speaker2" class="speakerimg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

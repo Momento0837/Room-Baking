@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃4</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+        
+        .main {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .sidebar {
+            position: absolute;
+            width: 36vw;
+            height: 5vh;
+            left: 5%;
+            padding:0;
+        }
+
+        .sidebar.sidebar-column {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap:1.5%;
+        }
+
+        .sidebar > .item {/*180x60*/
+            width: 15vw;
+            height: 7vh;
+            margin:0;
+        }
+        
+        .sidebarimg{
+            width:100%;
+            height:100%;
+        }
+
+        .box {
+            position: absolute;
+            background-color: #fecbc7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .block {/*700x900*/
+            width: 36vw;
+            height: 88vh;
+            left: 5%;
+            top: 9%;
+        }
+
+        .blockimg{
+            width:100%;
+            height:100%;
+        }
+
+        .bookshelf {/*900x1080*/
+            width: 46vw;
+            height: 100vh;
+            right: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .bookshelfimg{
+            position: absolute; 
+            width:100%; 
+            height:100%; 
+            z-index: 1;
+        }
+
+        .shelf-row {
+            width: 40vw;
+            height: 27.75vh;
+            display: flex;
+            background-color: #fd9a9a;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 3.1vh;
+        }
+
+        .shelf-row.bottom {
+            height: 32vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap:5.5%;
+        }
+
+        .shelf-row.bottom > .item {/*400x330*/
+            width: 11vw;
+            height: 15vh;
+            margin:0;
+            z-index: 1;
+        }
+
+        .boximg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+        <div class="sidebar sidebar-column">
+            <div class="item"><img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg"></div>
+            <div class="item"><img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg"></div>
+            <div class="item"><img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg"></div>
+        </div>
+
+        <div class="box block">
+            <img src="images/block3.png" alt="Block" class="blockimg">
+        </div>
+
+        <div class="box bookshelf">
+            <img src="images/bookshelf2.png" alt="Bookshelf" class="bookshelfimg">
+            <div class="shelf-row top">
+                <div class="item">자유롭게 물건 추가</div>
+            </div>
+            <div class="shelf-row middle">
+
+            </div>
+            <div class="shelf-row bottom">
+                <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div>
+                <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div>
+                <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
