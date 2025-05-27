@@ -36,9 +36,9 @@
 
         .brush{/*400x650*/
             position:absolute;
-            width:17vw;
+            width:13vw;
             height:40vh;
-            left:5%;
+            left:9%;
             bottom:0;
             transform:scale(-1, 1);
         }
@@ -50,19 +50,30 @@
         .frame{/*500x700*/
             position:absolute;
             width:45vw;
-            height:20vh;
+            height:22vh;
             right:0;
             top:12%;
             display:flex;
             justify-content:center;
-            gap:10%;
+            gap:40%;
         }
-        .frame > .item{
+
+        .frame > .item:nth-child(2n+1){
             width:8vw;
             height:20vh;
             background-color:#ff3692;
             margin:0;
         }
+        
+        .frame > .item:nth-child(2){
+            position:absolute;
+            width:8vw;
+            height:20vh;
+            bottom:0;
+            background-color:#ff3692;
+            margin:0;
+        }
+
         .frameimg{
             width:100%;
             height:100%;
@@ -71,7 +82,7 @@
         .table{
             position:absolute;
             width: 55vw;
-            height: 25vh;
+            height: 22vh;
             right: 0;
             bottom: 0;
         }
@@ -85,7 +96,7 @@
             width:20vw;
             height:26vh;
             right:12%;
-            bottom:25%;
+            bottom:22%;
         }
         .moniterimg{
             width:100%;
@@ -97,7 +108,7 @@
             width:55vw;
             height:17vh;
             right:0;
-            bottom:25%;
+            bottom:22%;
             display:flex;
             justify-content:center;
             gap:65%;
