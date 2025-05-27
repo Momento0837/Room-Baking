@@ -83,29 +83,41 @@
             height:100%;
         }*/
 
+        :root{
+            --bg-gradient-01: #faede7;
+            --bg-gradient-02: #ddb8a7;
+
+            --body-color: #ddb8a7;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            float: left;
         }
-img{
+
+        img{
             width: 100%;
             height: 100%;
         }
 
         body{
-            width: 100%;
-            height: 900px;
-            background-color: #ffd3d3;
+            background-color: var(--body-color);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main{
+            background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
         }
 
         @media(min-width: 1300px){
             .main{
-                max-width: 1700px;
+                position: relative;
+                max-width: 1920px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
-                background-color: #8bff2c;
 
                 overflow: hidden;
             }
@@ -113,10 +125,10 @@ img{
 
         @media(max-width: 1300px){
             .main{
+                position: relative;
                 max-width: 1300px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
-                background-color: #ffb2b2;
 
                 overflow: hidden;
             }
@@ -124,10 +136,10 @@ img{
 
         @media(max-width: 800px){
             .main{
+                position: relative;
                 max-width: 800px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
-                background-color: #fff;
 
                 overflow: hidden;
             }
@@ -135,30 +147,29 @@ img{
 
         
         .html{
-            position: relative;
+            position: absolute;
             width: 30%;
             height: 100%;
         }
 
         .site{
-            position: relative;
+            position: absolute;
 
             width: 35%;
             height: 35%;
 
             top: 5%;
-
-            margin-left: 25%;
-            margin-right: 10%;
+            left: 55%;
         }
 
         .css{
-            position: relative;
+            position: absolute;
 
             width: 20%;
             height: 25%;
 
-            top: 10.5%;
+            left: 30%;
+            top: 46%;
             z-index: 1;
 
             margin-left: 33%;
@@ -166,12 +177,12 @@ img{
         }
         
         .table{
-            position: relative;
+            position: absolute;
             width: 60%;
             height: 31%;
 
-            top: 9%;
-            left: 15%;
+            top: 70%;
+            left: 40%;
         }
     </style>
 </head>
