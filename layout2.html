@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레이아웃2</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      margin: 0 auto;
+      background-color: #ffe5e5;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh;
+      background-color: transparent;
+    }
+
+    .top-button {
+      width: 9vw;
+      height: 5vh;
+      background-color: #d96d6d;
+      border-radius: 10px;
+      margin: 0 1vw;
+      display: inline-block;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-box {
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      width: 100%;
+      height: 80vh;
+      background-color: rgba(255, 100, 100, 0.5);
+    }
+
+    .inner-box {
+      width: 17vw;
+      height: 36vh;
+      background-color: rgba(200, 50, 50, 0.7);
+      margin: 2vh;
+      float: left;
+      position: relative;
+    }
+
+    .inner-content {
+      width: 12vw;
+      height: 26vh;
+      background-color: rgba(255, 200, 200, 0.8);
+      margin: 5vh auto;
+    }
+
+    .character {
+      position: absolute;
+      right: 3vw;
+      top: 30vh;
+      width: 16vw;
+      height: 46vh;
+      background-color: #2f47ff;
+      color: black;
+      font-size: 1.5vw;
+      text-align: center;
+      line-height: 46vh;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90vw;
+      height: 37vh;
+      background-color: rgba(100, 100, 255, 0.5);
+      border-radius: 2vw;
+      text-align: center;
+      line-height: 37vh;
+      font-size: 2vw;
+    }
+
+    .side-label {
+      position: absolute;
+      left: -3vw;
+      top: 10vh;
+      writing-mode: vertical-rl;
+      background-color: black;
+      color: white;
+      padding: 0.5vw;
+      font-size: 1vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="top-button"></div>
+      <div class="top-button"></div>
+      <div class="top-button"></div>
+    </div>
+
+    <div class="main-box">
+      <div class="side-label">여백 100px</div>
+
+      <div class="inner-box">
+        <div class="inner-content"></div>
+      </div>
+
+      <div class="inner-box">
+        <div class="inner-content"></div>
+      </div>
+
+      <div class="character">캐릭터<br>16 X 46</div>
+      <div class="overlay">90 X 37 </div>
+    </div>
+  </div>
+</body>
+</html>
