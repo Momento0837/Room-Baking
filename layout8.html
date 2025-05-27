@@ -5,28 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃8</title>
     <style>
-        *{
-            margin: 0 auto;
-            padding:0 auto;
-            box-sizing:border-box;
+        :root{
+            --bg-gradient-01: #ffefef;
+            --bg-gradient-02: #f07575;
+
+            --body-color: #f07575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body {
+        img{
             width: 100%;
             height: 100%;
-            overflow:hidden;
+        }
+
+        body{
+            background-color: var(--body-color);
+
+            display: flex;
+            justify-content: center;
         }
 
         .main{
-            position:relative;
-            width:100vw;
-            height:100vh;
-            display:flex;
-            align-items:center;
+            background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
         }
-        .whiteboard{/*1300x800*/
-            width:67vw;
-            height:74vh;
+
+        @media(min-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        .whiteboard{
+            position: absolute;
+
+            left: 10%;
+            top: 5%;
+
+            width: 80%;
+            height: 90%;
         }
         
         .whiteboardimg{
