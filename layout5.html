@@ -5,32 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃5</title>
     <style>
-
-        :root{
-            --bg-gradient-01: #f1ffe7;
-            --bg-gradient-02: #ccf3b2;
-        }
-
-        * {
-            margin: 0 auto;
-            padding: 0 auto;
-            box-sizing: border-box;
-        }
-
-        body {
+        /*body {
             width: 100%;
             height: 100%;
-            overflow:hidden;
+            overflow:hidden;*/
             /*background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));*/
-        }
+        /*}
 
         .main {
             position: relative;
             width: 100vw;
             height: 100vh;
         }
-        .whiteboard{/*1300x800*/
-            position:absolute;
+        .whiteboard{*//*1300x800*/
+            /*position:absolute;
             width:33vw;
             height:37vh;
             left:5%;
@@ -41,8 +29,8 @@
             height:100%;
         }
 
-        .brush{/*400x650*/
-            position:absolute;
+        .brush{*//*400x650*/
+            /*position:absolute;
             width:13vw;
             height:40vh;
             left:9%;
@@ -54,8 +42,8 @@
             height:100%;
         }
 
-        .frame{/*500x700*/
-            position:absolute;
+        .frame{*//*500x700*/
+            /*position:absolute;
             width:45vw;
             height:22vh;
             right:0;
@@ -98,8 +86,8 @@
             height:100%;
         }
         
-        .moniter{/*800x570*/
-            position:absolute;
+        .moniter{*//*800x570*/
+            /*position:absolute;
             width:20vw;
             height:26vh;
             right:12%;
@@ -110,8 +98,8 @@
             height:100%;
         }
 
-        .speaker{/*200x300*/
-            position:absolute;
+        .speaker{*//*200x300*/
+            /* position:absolute;
             width:55vw;
             height:17vh;
             right:0;
@@ -128,13 +116,166 @@
         .speakerimg{
             width:100%;
             height:100%;
+        } */
+
+        :root{
+            --bg-gradient-01: #f1ffe7;
+            --bg-gradient-02: #ccf3b2;
+        }
+
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+
+            float: left;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        body{
+            background-color: #ffd3d3;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        @media(min-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #8bff2c;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #ffb2b2;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #fff;
+
+                overflow: hidden;
+            }
+        }
+
+        .whiteboard{
+            position: relative;
+
+            left: 7%;
+            top: 14%;
+
+            width: 28%;
+            height: 33%;
+        }
+
+        .brush{
+            position: relative;
+
+            top: 55%;
+            left: -23%;
+
+            width: 20%;
+            height: 60%;
+
+            transform: scaleX(-1);
+        }
+        
+        .frame{
+            position: relative;
+
+            top: 10%;
+            left: 6%;
+
+            display: flex;
+
+            justify-content: center;
+            gap: 1%;
+
+            width: 33%;
+            height: 23%;
+        }
+
+        .frame > :nth-child(2){
+            align-self: flex-end;
+        }
+
+        .frame > .item{
+            width: 20%;
+            height: 80%;
+        }
+
+        .table{
+            position: relative;
+
+            left: 40%;
+            top: 14.5%;
+
+            width: 60%;
+            height: 35%;
+        }
+
+        .moniter{
+            position: relative;
+
+            top: -13.5%;
+            left: 8%;
+
+            width: 22%;
+            height: 30%;
+        }
+
+        .speaker{
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+
+            top: -35%;
+            left: 43%;
+
+            z-index: 1;
+
+            width: 55%;
+            height: 16%;
+        }
+
+        .speaker>.item{
+            position: absolute;
+
+            width: 9.5%;
+            height: 99%;
+        }
+
+        .speaker>:nth-child(2){
+            align-self: flex-end;
         }
     </style>
 </head>
 <body>
     <div class="main">
         <div class="whiteboard">
-            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboard">
+            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboard-img">
         </div>
         <div class="brush">
             <img src="images/brush.png" alt="Brush" class="brushimg">
