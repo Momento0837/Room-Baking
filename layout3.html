@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃3</title>
     <style>
-        * {
+        /* * {
             margin: 0 auto;
             padding: 0 auto;
             box-sizing: border-box;
@@ -31,7 +31,7 @@
             text-align: center;
         }
 
-        .html {/*600 x 1080*/
+        .html {/*600 x 1080*//*
             width: 31vw;
             height: 100vh;
             top: 0;
@@ -44,7 +44,7 @@
             height:100%;
         }
 
-        .site {/*700 x 300*/
+        .site {/*700 x 300*//*
             width: 36vw;
             height: 32vh;
             top: 5%;
@@ -57,7 +57,7 @@
             height:100%;
         }
 
-        .css {/*500 x 300*/
+        .css {/*500 x 300*//*
             width: 22vw;
             height: 24vh;
             bottom: 32%;
@@ -70,7 +70,7 @@
             height:100%;
         }
 
-        .table {/*1180 x 350*/
+        .table {/*1180 x 350*//*
             width: 55vw;
             height: 32vh;
             bottom: 0;
@@ -81,6 +81,97 @@
             position:absolute;
             width:100%;
             height:100%;
+        }*/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            float: left;
+        }
+img{
+            width: 100%;
+            height: 100%;
+        }
+
+        body{
+            width: 100%;
+            height: 900px;
+            background-color: #ffd3d3;
+        }
+
+        @media(min-width: 1300px){
+            .main{
+                max-width: 1700px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #8bff2c;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #ffb2b2;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+                background-color: #fff;
+
+                overflow: hidden;
+            }
+        }
+
+        
+        .html{
+            position: relative;
+            width: 30%;
+            height: 100%;
+        }
+
+        .site{
+            position: relative;
+
+            width: 35%;
+            height: 35%;
+
+            top: 5%;
+
+            margin-left: 25%;
+            margin-right: 10%;
+        }
+
+        .css{
+            position: relative;
+
+            width: 20%;
+            height: 25%;
+
+            top: 10.5%;
+            z-index: 1;
+
+            margin-left: 33%;
+            margin-right: 10%;
+        }
+        
+        .table{
+            position: relative;
+            width: 60%;
+            height: 31%;
+
+            top: 9%;
+            left: 15%;
         }
     </style>
 </head>
