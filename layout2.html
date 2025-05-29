@@ -9,9 +9,9 @@
       background: white;
     }
 
-    .container {
+    .main {
       position: relative;
-      width: 100vw;
+      width: 100%;
       margin: 0 auto;
       background-color: #ffe5e5;
     }
@@ -19,106 +19,138 @@
     .top-bar {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 2%;
       width: 100%;
-      height: 10vh;
       background-color: transparent;
+      display: flex;
+      align-items: center;
+      padding-left: 1%;
     }
 
     .top-button {
-      width: 9vw;
-      height: 5vh;
-      background-color: #d96d6d;
-      border-radius: 10px;
-      margin: 0 1vw;
-      display: inline-block;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      width: 9%;
+      height: 5%;
+      margin: 0 1%;
+    }
+
+    .top-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .main-box {
       position: absolute;
-      top: 10vh;
+      top: 10%;
       left: 0;
       width: 100%;
-      height: 80vh;
-      background-color: rgba(255, 100, 100, 0.5);
+      height: 80%;
     }
 
     .inner-box {
-      width: 17vw;
-      height: 36vh;
-      background-color: rgba(200, 50, 50, 0.7);
-      margin: 2vh;
+      width: 17%;
+      height: 54%;
+      left: 5%;
+      margin: 2%;
       float: left;
       position: relative;
     }
 
-    .inner-content {
-      width: 12vw;
-      height: 26vh;
-      background-color: rgba(255, 200, 200, 0.8);
-      margin: 5vh auto;
+    .inner-box img {
+      width: 100%;
+      height: 100%;
     }
 
     .character {
       position: absolute;
-      right: 3vw;
-      top: 30vh;
-      width: 16vw;
-      height: 46vh;
-      background-color: #2f47ff;
-      color: black;
-      font-size: 1.5vw;
-      text-align: center;
-      line-height: 46vh;
+      right: -5%;
+      top: 10%;
+      width: 35%;
+      height: 65%;
+      z-index: 1;
+    }
+
+    .character img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 90vw;
-      height: 37vh;
-      background-color: rgba(100, 100, 255, 0.5);
-      border-radius: 2vw;
-      text-align: center;
-      line-height: 37vh;
-      font-size: 2vw;
+      bottom: 0%;
+      left: 3%;
+      width: 90%;
+      height: 42%;
+    }
+
+    .overlay img {
+      width: 100%;
+      height: 100%;
+      border-radius: 2%;
     }
 
     .side-label {
       position: absolute;
-      left: -3vw;
-      top: 10vh;
+      left: -3%;
+      top: 10%;
       writing-mode: vertical-rl;
       background-color: black;
       color: white;
-      padding: 0.5vw;
-      font-size: 1vw;
+      padding: 0.5%;
+      font-size: 1%;
     }
+
+    @media(min-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                position: relative;
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="main">
     <div class="top-bar">
-      <div class="top-button"></div>
-      <div class="top-button"></div>
-      <div class="top-button"></div>
+      <div class="top-button"><img src="images/상단박스1.png" alt="상단버튼1"></div>
+      <div class="top-button"><img src="images/상단박스2.png" alt="상단버튼2"></div>
+      <div class="top-button"><img src="images/상단박스3.png" alt="상단버튼3"></div>
     </div>
 
     <div class="main-box">
       <div class="side-label">여백 100px</div>
 
-      <div class="inner-box">
-        <div class="inner-content"></div>
-      </div>
+      <div class="inner-box"><img src="images/네모박스.png" alt="네모박스1"></div>
+      <div class="inner-box"><img src="images/네모박스.png" alt="네모박스2"></div>
 
-      <div class="inner-box">
-        <div class="inner-content"></div>
-      </div>
-
-      <div class="character">캐릭터<br>16 X 46</div>
-      <div class="overlay">90 X 37 </div>
+      <div class="character"><img src="images/캐릭터.png" alt="캐릭터"></div>
+      <div class="overlay"><img src="images/가로투명도상자.png" alt="투명박스" style="opacity: 0.5;">
     </div>
   </div>
 </body>

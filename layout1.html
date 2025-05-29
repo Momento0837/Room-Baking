@@ -5,47 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃1</title>
     <style>
-        body {
-          margin: 0;
-          padding: 0;
-          background-color: white;
+        :root{
+            --bg-gradient-01: #faede7;
+            --bg-gradient-02: #ddb8a7;
+
+            --body-color: #ddb8a7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-      width: 70vw;
-      height: 79vh;
-      display: flex;
-      margin: 0 auto;
-    }
+        img{
+            width: 100%;
+            height: 100%;
+        }
 
-    .left {
-      width: 50%;
-      background-color: #fd9a9a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-    }
+        body{
+            background-color: var(--body-color);
 
-    .right {
-      width: 50%;
-      background-color: #fecbc7;
-      position: relative;
-    }
+            display: flex;
+            justify-content: center;
+        }
 
-    .line {
-      height: 2px;
-      background-color: #fd9a9a;
-      margin: 25px 25px;
-    }
+        .container{
+            background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
+        }
+
+        @media(min-width: 1300px){
+            .container{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .container{
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .container{
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+        
+        .note{
+          position:absolute;
+
+          left: 15%;
+          top: 7%;
+
+          width: 70%;
+          height: 85%;
+        }
   </style>
 </head>
 <body>
     <div class="container">
-        <div class="left">
-        </div>
-        <div class="right">     
-        </div>
+      <div class="note">
+        <img src="images/note.png" alt="Note" class="noteimg">
       </div>
+    </div>
 </body>
 </html>
