@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>레이아웃2</title>
   <style>
+    img{
+      width: 100%;
+      height: 100%;
+    }
+
     body {
       margin: 0;
       background: white;
@@ -16,27 +21,23 @@
       background-color: #ffe5e5;
     }
 
-    .top-bar {
-      position: absolute;
-      top: 0;
-      left: 2%;
-      width: 100%;
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      padding-left: 1%;
-    }
-
-    .top-button {
-      width: 9%;
-      height: 5%;
-      margin: 0 1%;
-    }
-
-    .top-button img {
-      width: 100%;
+    .item{
+      width: 28%;
       height: 100%;
-      object-fit: cover;
+    }
+
+    .sidebar{
+      position: absolute;
+      left: 7%;
+
+      display: flex;
+      
+      justify-content: center;
+      gap: 3%;
+      
+      width: 40%;
+      height: 7%;
+      overflow: hidden;
     }
 
     .main-box {
@@ -48,12 +49,22 @@
     }
 
     .inner-box {
+      position: absolute;
+
+      top: 13%;
+
       width: 17%;
       height: 54%;
-      left: 5%;
-      margin: 2%;
-      float: left;
-      position: relative;
+    }
+
+    .main-box>.inner-box:nth-child(1){
+      position: absolute;
+      left: 13%;
+    }
+
+    .main-box>.inner-box:nth-child(2){
+      position: absolute;
+      left: 33%;
     }
 
     .inner-box img {
@@ -63,31 +74,21 @@
 
     .character {
       position: absolute;
-      right: -5%;
-      top: 10%;
-      width: 35%;
+      left: 77%;
+      top: 22%;
+      width: 16%;
       height: 65%;
       z-index: 1;
     }
 
-    .character img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
     .overlay {
       position: absolute;
-      bottom: 0%;
-      left: 3%;
-      width: 90%;
-      height: 42%;
-    }
 
-    .overlay img {
-      width: 100%;
-      height: 100%;
-      border-radius: 2%;
+      bottom: -5%;
+      left: 5%;
+
+      width: 90%;
+      height: 48%;
     }
 
     .side-label {
@@ -102,50 +103,48 @@
     }
 
     @media(min-width: 1300px){
-            .main{
-                position: relative;
-                max-width: 1920px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
+        .main{
+            position: relative;
+            max-width: 1920px;
+            width: 100%;
+            aspect-ratio: 34 / 16;
 
-                overflow: hidden;
-            }
+            overflow: hidden;
         }
+    }
 
-        @media(max-width: 1300px){
-            .main{
-                position: relative;
-                max-width: 1300px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
+    @media(max-width: 1300px){
+        .main{
+            position: relative;
+            max-width: 1300px;
+            width: 100%;
+            aspect-ratio: 34 / 16;
 
-                overflow: hidden;
-            }
+            overflow: hidden;
         }
+    }
 
-        @media(max-width: 800px){
-            .main{
-                position: relative;
-                max-width: 800px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
+    @media(max-width: 800px){
+        .main{
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            aspect-ratio: 34 / 16;
 
-                overflow: hidden;
-            }
+            overflow: hidden;
         }
+    }
   </style>
 </head>
 <body>
   <div class="main">
-    <div class="top-bar">
-      <div class="top-button"><img src="images/상단박스1.png" alt="상단버튼1"></div>
-      <div class="top-button"><img src="images/상단박스2.png" alt="상단버튼2"></div>
-      <div class="top-button"><img src="images/상단박스3.png" alt="상단버튼3"></div>
-    </div>
+    <div class="sidebar sidebar-column">
+            <div class="item"><img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg"></div>
+            <div class="item"><img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg"></div>
+            <div class="item"><img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg"></div>
+        </div>
 
     <div class="main-box">
-      <div class="side-label">여백 100px</div>
-
       <div class="inner-box"><img src="images/네모박스.png" alt="네모박스1"></div>
       <div class="inner-box"><img src="images/네모박스.png" alt="네모박스2"></div>
 
