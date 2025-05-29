@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const note = document.querySelector('.note');
-
-    note.style.
+$(document).ready(function(){
+    $(".note").animate({top: '7%'}, 1500, 'easeOutQuad');
 })
