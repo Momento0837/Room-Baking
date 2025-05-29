@@ -148,8 +148,11 @@
         
         .html{
             position: absolute;
+
             width: 30%;
             height: 100%;
+
+            transform: scaleX(100%);
         }
 
         .site{
@@ -184,9 +187,29 @@
             top: 70%;
             left: 40%;
         }
+
+        .whitebox{
+            opacity: 100%;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #fff;
+
+            z-index: 5;
+        }
+  </style>
     </style>
 </head>
 <body>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="JS/layout3.js"></script>
+
+    <div class="whitebox"></div>
+
     <div class="main">
         <div class="box html">
             <img src="images/bookshelf3.png" alt="Bookshelf3" class="htmlimg">
