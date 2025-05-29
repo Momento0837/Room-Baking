@@ -5,47 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃1</title>
     <style>
-        body {
-          margin: 0;
-          padding: 0;
-          background-color: white;
+        :root{
+            --bg-gradient-01: #faede7;
+            --bg-gradient-02: #ddb8a7;
+
+            --body-color: #ddb8a7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-      width: 70vw;
-      height: 79vh;
-      display: flex;
-      margin: 0 auto;
-    }
+        img{
+            width: 100%;
+            height: 100%;
+        }
 
-    .left {
-      width: 50%;
-      background-color: #fd9a9a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-    }
+        body{
+            background-color: var(--body-color);
 
-    .right {
-      width: 50%;
-      background-color: #fecbc7;
-      position: relative;
-    }
+            display: flex;
+            justify-content: center;
+        }
 
-    .line {
-      height: 2px;
-      background-color: #fd9a9a;
-      margin: 25px 25px;
-    }
+        .container{
+            background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
+        }
+
+        @media(min-width: 1300px){
+            .container{
+                position: relative;
+                
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .container{
+                position: relative;
+
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .container{
+                position: relative;
+
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        .index{
+            display: none;
+
+            position: absolute;
+
+            left: 60%;
+            top: 13%;
+
+            /* width: 12%; */
+            width: 7%;
+            height: 6%;
+
+            z-index: 1;
+        }
+        
+        .note{
+            overflow: visible;
+
+            display: none;
+
+            position:absolute;
+
+            /* left: 15%; */
+            left: 40%;
+            top: 7%;
+            bottom: 0%;
+
+            /* width: 70%; */
+            width: 25%;
+            height: 85%;
+        }
+
+        .noteclose{
+            position: absolute;
+
+            left: 46.5%;
+            top: -100%;
+
+            width: 7%;
+            height: 85%;
+        }
+
+        .whitebox{
+            opacity: 0%;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #fff;
+        }
   </style>
 </head>
 <body>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="JS/layout1.js"></script>
+    
+    <div class="whitebox"></div>
     <div class="container">
-        <div class="left">
+        <div class="noteclose">
+            <a href="#">
+                <img src="images/noteclose.png" alt="Noteclose" class="notecloseimg">
+            </a>
         </div>
-        <div class="right">     
+        <div class="index">
+            
+        <img src="images/index.png" alt="Index" class="indeximg">
         </div>
+      <div class="note">
+        <img src="images/note.png" alt="Note" class="noteimg">
       </div>
+    </div>
 </body>
 </html>
