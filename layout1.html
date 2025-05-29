@@ -37,6 +37,7 @@
         @media(min-width: 1300px){
             .container{
                 position: relative;
+                
                 max-width: 1920px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
@@ -47,6 +48,8 @@
 
         @media(max-width: 1300px){
             .container{
+                position: relative;
+
                 max-width: 1300px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
@@ -57,6 +60,8 @@
 
         @media(max-width: 800px){
             .container{
+                position: relative;
+
                 max-width: 800px;
                 width: 100%;
                 aspect-ratio: 34 / 16;
@@ -65,25 +70,46 @@
             }
         }
 
-        .indeximg{
+        .index{
+            display: none;
+
             position: absolute;
 
-            left: 92%;
-            top: 8%;
+            left: 60%;
+            top: 13%;
 
-            width: 12%;
-            height: 7%;
+            /* width: 12%; */
+            width: 7%;
+            height: 6%;
+
+            z-index: 1;
         }
         
         .note{
-          position:absolute;
+            overflow: visible;
 
-          left: 15%;
-          top: -100%;
-          bottom: 0%;
+            display: none;
 
-          width: 70%;
-          height: 85%;
+            position:absolute;
+
+            /* left: 15%; */
+            left: 40%;
+            top: 7%;
+            bottom: 0%;
+
+            /* width: 70%; */
+            width: 25%;
+            height: 85%;
+        }
+
+        .noteclose{
+            position: absolute;
+
+            left: 46.5%;
+            top: -100%;
+
+            width: 7%;
+            height: 85%;
         }
   </style>
 </head>
@@ -93,8 +119,16 @@
     <script src="JS/layout1.js"></script>
     
     <div class="container">
+        <div class="noteclose">
+            <a href="#">
+                <img src="images/noteclose.png" alt="Noteclose" class="notecloseimg">
+            </a>
+        </div>
+        <div class="index">
+            
+        <img src="images/index.png" alt="Index" class="indeximg">
+        </div>
       <div class="note">
-        <img src="images/index.png" alt="index" class="indeximg">
         <img src="images/note.png" alt="Note" class="noteimg">
       </div>
     </div>
