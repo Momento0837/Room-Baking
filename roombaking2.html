@@ -9,9 +9,9 @@
       background: white;
     }
 
-    .container {
+    .main {
       position: relative;
-      width: 100vw;
+      width: 100%;
       margin: 0 auto;
       background-color: #ffe5e5;
     }
@@ -19,19 +19,18 @@
     .top-bar {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 2%;
       width: 100%;
-      height: 10vh;
       background-color: transparent;
       display: flex;
       align-items: center;
-      padding-left: 1vw;
+      padding-left: 1%;
     }
 
     .top-button {
-      width: 9vw;
-      height: 5vh;
-      margin: 0 1vw;
+      width: 9%;
+      height: 5%;
+      margin: 0 1%;
     }
 
     .top-button img {
@@ -42,16 +41,17 @@
 
     .main-box {
       position: absolute;
-      top: 10vh;
+      top: 10%;
       left: 0;
       width: 100%;
-      height: 80vh;
+      height: 80%;
     }
 
     .inner-box {
-      width: 17vw;
-      height: 36vh;
-      margin: 2vh;
+      width: 17%;
+      height: 54%;
+      left: 5%;
+      margin: 2%;
       float: left;
       position: relative;
     }
@@ -63,10 +63,11 @@
 
     .character {
       position: absolute;
-      right: 3vw;
-      top: 30vh;
-      width: 16vw;
-      height: 46vh;
+      right: -5%;
+      top: 10%;
+      width: 35%;
+      height: 65%;
+      z-index: 1;
     }
 
     .character img {
@@ -77,33 +78,65 @@
 
     .overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 90vw;
-      height: 37vh;
+      bottom: 0%;
+      left: 3%;
+      width: 90%;
+      height: 42%;
     }
 
     .overlay img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 2vw;
+      border-radius: 2%;
     }
 
     .side-label {
       position: absolute;
-      left: -3vw;
-      top: 10vh;
+      left: -3%;
+      top: 10%;
       writing-mode: vertical-rl;
       background-color: black;
       color: white;
-      padding: 0.5vw;
-      font-size: 1vw;
+      padding: 0.5%;
+      font-size: 1%;
     }
+
+    @media(min-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                position: relative;
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="main">
     <div class="top-bar">
       <div class="top-button"><img src="상단박스1.png" alt="상단버튼1"></div>
       <div class="top-button"><img src="상단박스2.png" alt="상단버튼2"></div>
