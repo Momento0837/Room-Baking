@@ -22,8 +22,20 @@
     }
 
     .item{
+      position: absolute;
+
       width: 28%;
       height: 100%;
+
+      top: -100%;
+    }
+
+    .sidebar>.item:first-child{
+      left: 2%;
+    }
+
+    .sidebar>.item:nth-child(3){
+      left: 70%;
     }
 
     .sidebar{
@@ -74,20 +86,23 @@
 
     .character {
       position: absolute;
+
       left: 77%;
-      top: 22%;
+      top: 120%;
+
       width: 16%;
-      height: 65%;
+      height: 68%;
+
       z-index: 1;
     }
 
     .overlay {
       position: absolute;
 
-      bottom: -5%;
-      left: 5%;
+      top: 120%;
+      left: 4%;
 
-      width: 90%;
+      width: 92.5%;
       height: 48%;
     }
 
@@ -108,7 +123,6 @@
             max-width: 1920px;
             width: 100%;
             aspect-ratio: 34 / 16;
-
             overflow: hidden;
         }
     }
@@ -134,9 +148,28 @@
             overflow: hidden;
         }
     }
+
+    .whitebox{
+            opacity: 100%;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #fff;
+
+            z-index: 1;
+        }
   </style>
 </head>
 <body>
+  <script src="JS/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="JS/layout2.js"></script>
+
+  <div class="whitebox"></div>
+
   <div class="main">
     <div class="sidebar sidebar-column">
             <div class="item"><img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg"></div>
