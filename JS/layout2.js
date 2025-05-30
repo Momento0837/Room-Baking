@@ -3,7 +3,7 @@ const mid = 600;
 const short = 300;
 
 $(document).ready(function(){
-    // 하얀색 페이드로 화면전환환
+    // 하얀색 페이드로 화면전환
     $(".whitebox").animate({opacity: '0%'}, long, 'easeOutQuad', function(){
         $(".whitebox").css({display: 'none'});
     });

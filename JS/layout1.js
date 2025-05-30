@@ -4,7 +4,8 @@ const short = 300;
 $(document).ready(function(){
     $(".noteclose").off('click'); // 노트 닫힌 모습 클릭 비활성화
 
-    $(".noteclose").animate({top: '7%'}, long, 'easeOutQuad', function(){
+    $(".noteclose").animate({top: '8%'}, long, 'easeOutQuad')
+    $(".noteclose").animate({top: '7%'}, short, 'easeOutQuad', function(){
         $(".noteclose").on('click', function(){
             $(".note").css({display: 'block'});
             $(".index").css({display: 'block'});
