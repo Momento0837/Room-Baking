@@ -198,20 +198,37 @@
             overflow: hidden;
         }
 
+        .sidebar > .item{
+            position: absolute;
+            
+            top: -100%;
+        }
+
+        .sidebar>.item:first-child{
+            left: 2%;
+        }
+
+        .sidebar>.item:nth-child(3){
+            left: 70%;
+        }
+
         .block{
             position: absolute;
-            top: 10%;
+
+            top: 100%;
             left: 7%;
 
             width: 40%;
             height: 87%;
             clear: left;
+
+            box-shadow: 0px 6px 10px #1a19193a;
         }
 
         .bookshelf{
             position: absolute;
 
-            top: 5%;
+            top: 100%;
             left: 50%;
 
             width: 40%;
@@ -240,26 +257,45 @@
         .bottom{
             position: absolute;
 
-            left: 10%;
-            top: 67.9%;
+            left: 8%;
+            top: 68%;
             
             display: flex;
 
             justify-content: center;
             align-items: flex-end;
-            gap: 5%;
+            gap: 1.7%;
 
-            width: 80%;
+            width: 84%;
             height: 29%;
         }
 
         .bottom>.item{
-            width: 29%;
+            width: 35%;
             height: 65%;
+        }
+
+        .whitebox{
+            opacity: 100%;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #fff;
+
+            z-index: 1;
         }
     </style>
 </head>
 <body>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="JS/layout4.js"></script>
+
+    <div class="whitebox"></div>
+
     <div class="main">
         
         <div class="sidebar sidebar-column">
@@ -273,9 +309,8 @@
         </div>
 
         <div class="box bookshelf">
-            <img src="images/bookshelf2.png" alt="Bookshelf" class="bookshelfimg">
+            <img src="images/bookshelf1.png" alt="Bookshelf" class="bookshelfimg">
             <div class="shelf-row top">
-                <div class="item">자유롭게 물건 추가</div>
             </div>
             <div class="shelf-row middle">
 
