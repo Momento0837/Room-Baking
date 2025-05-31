@@ -16,11 +16,11 @@ $(document).ready(function(){
     // $(".block").animate({left: '-38%'}, long, 'easeOutQuad');
     $(".bookshelf").animate({width: '40%', height: '95%', left: '30%', top: '10%'}, long, 'easeOutQuad');
 
-    // Header탭 내려오는 애니메이션. 나머지는 꼬리만 보이게.
+    // Main탭 내려오는 애니메이션. 나머지는 꼬리만 보이게.
     setTimeout(() => {
-        $(".sidebar > :first-child").animate({top: '0%'}, 1100,'easeOutQuad');
+        $(".sidebar > :first-child").animate({top: '-70%'}, 1100,'easeOutQuad');
         setTimeout(() => { // 2번째 탭은 0.1초 늦게
-            $(".sidebar > :nth-child(2)").animate({top: '-70%'}, 1100,'easeOutQuad');
+            $(".sidebar > :nth-child(2)").animate({top: '0%'}, 1100,'easeOutQuad');
         }, 100);
         setTimeout(() => { // 3번째 탭은 0.2초 늦게
             $(".sidebar > :nth-child(3)").animate({top: '-70%'}, 1100,'easeOutQuad');
@@ -76,8 +76,8 @@ $(document).ready(function(){
     let origintext = line.innerText;
 
     setTimeout(() => {
-        $(".bookshelf").animate({width: '80%', height: '185%', left: '10%', top: '10%'}, long, 'easeOutQuad');
-        }, 1000);
+        $(".bookshelf").animate({width: '80%', height: '185%', left: '10%', top: '-60%'}, long, 'easeOutQuad');
+        }, 1000); // 책장 확대
 
     line.addEventListener("click", () => {
         switch(count){
