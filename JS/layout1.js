@@ -1,4 +1,6 @@
+const superlong = 2000;
 const long = 1300;
+const mid = 600;
 const short = 300;
 
 $(document).ready(function(){
