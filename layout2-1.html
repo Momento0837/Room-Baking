@@ -44,7 +44,7 @@
     :root {
       --bg-gradient-01: #faede7;
       --bg-gradient-02: #ddb8a7;
-      
+
       --bg-color: #cdded6;
 
       --body-color: #ddb8a7;
@@ -283,20 +283,14 @@
 
     #cute_stick {
       left: -1%;
-
-      top: -30%;
       
-      opacity: 0%;
-      display: none;
+      display: block;
     }
 
     #family_stick {
       right: 46%;
 
-      top: -30%;
-
-      opacity: 0%;
-      display: none;
+      display: block;
     }
 
     #cute, #family{
@@ -492,7 +486,7 @@
 <body>
   <script src="JS/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="JS/layout2.js"></script>
+  <script src="JS/layout2-1.js"></script>
 
   <div class="whitebox"></div>
   <div class="main">
@@ -538,7 +532,7 @@
       <input id="imgtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
     </div>
 
-    <div class="box bookshelf">
+    <div class="box bookshelf" id="bookshelf">
       <a href="#">
         <div class="shelf-row top">
           <div id="cute">
@@ -555,7 +549,7 @@
 
       <a href="#">
         <div class="shelf-row middle">
-          <img src="images/pinknote.png" alt="PinkNote" class="note">
+          <img src="images/pinknote.png" alt="PinkNote" class="note" id="note">
         </div>
       </a>
 
@@ -568,14 +562,13 @@
       <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
     </div>
 
-    <div class="main-box"></div>
     <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
     <div class="overlay">
       <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
 
       <h1>빗자루</h1>
       <a href="#">
-        <p id="line">자, Header를 한 번 보자.</p>
+        <p id="line">이번에는 Main을 보자!</p>
       </a>
 
     </div>
