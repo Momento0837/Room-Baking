@@ -142,7 +142,7 @@ $(document).ready(function(){
                 break;
         }
 
-        const note = document.getElementById("bookshelf");
+        const note = document.getElementById("note");
 
         note.addEventListener('click', (event) => {
             // 캐릭터 아래로 내려가는 모션
@@ -170,7 +170,6 @@ $(document).ready(function(){
 
                     // 캐릭터 아래로 올라가는 모션
                     $(".main-box").show();
-                    $(".character-box").stop().animate({top: '17%'}, short, 'easeOutQuad');
                     $(".character-box").animate({top: '18%'}, long, 'easeOutQuad');
 
                     // 캐릭터 말풍선 올라가는 모션

@@ -22,6 +22,9 @@ $(document).ready(function () {
         $(".character").animate({ top: '21%' }, superlong, 'easeOutQuad');
         $(".character").animate({ top: '22%' }, long, 'easeOutQuad');
     }, 300);
+    
+    // 캐릭터 말풍선 올라오는 애니메이션
+    setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
 
     // 캐릭터 위 아래로 왔다갔다 하는 애니메이션
     const purse = setInterval(function () {
@@ -30,11 +33,6 @@ $(document).ready(function () {
             $(".character").animate({ top: '22%' }, long, 'easeOutQuad');
         }, 1500);
     }, 3000);
-
-    // 캐릭터 말풍선 올라오는 애니메이션
-    setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
-
-
 
     // 상단탭 세개에 마우스를 올리면 커지는 이벤트
     $('.sidebar>.item').on("mouseover", function () {
