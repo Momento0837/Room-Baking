@@ -22,7 +22,7 @@ $(document).ready(function () {
         $(".character").animate({ top: '21%' }, superlong, 'easeOutQuad');
         $(".character").animate({ top: '22%' }, long, 'easeOutQuad');
     }, 300);
-    
+
     // 캐릭터 말풍선 올라오는 애니메이션
     setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
 
@@ -245,6 +245,8 @@ $(document).ready(function () {
                     line.innerText = "먼저, 가장 위쪽 Header를 정리하러 가보자!";
                 });
                 $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                $('.sidebar> :nth-child(2)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
+                $('.sidebar> :nth-child(3)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
                 count++;
                 break;
 
@@ -260,7 +262,7 @@ $(document).ready(function () {
             default:
                 break;
         }
-        
+
     }); // 캐릭터 대사 switch문 끝
 
     // header 클릭시
