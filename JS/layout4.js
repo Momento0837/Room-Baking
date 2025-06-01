@@ -23,6 +23,9 @@ $(document).ready(function () {
         $(".character").animate({ top: '22%' }, long, 'easeOutQuad');
     }, 300);
 
+    // 캐릭터 말풍선 올라오는 애니메이션
+    setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
+
     // 캐릭터 위 아래로 왔다갔다 하는 애니메이션
     const purse = setInterval(function () {
         $(".character").animate({ top: '23%' }, long, 'easeOutQuad');
@@ -30,11 +33,6 @@ $(document).ready(function () {
             $(".character").animate({ top: '22%' }, long, 'easeOutQuad');
         }, 1500);
     }, 3000);
-
-    // 캐릭터 말풍선 올라오는 애니메이션
-    setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
-
-
 
     // 상단탭 세개에 마우스를 올리면 커지는 이벤트
     $('.sidebar>.item').on("mouseover", function () {
@@ -247,6 +245,8 @@ $(document).ready(function () {
                     line.innerText = "먼저, 가장 위쪽 Header를 정리하러 가보자!";
                 });
                 $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                $('.sidebar> :nth-child(2)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
+                $('.sidebar> :nth-child(3)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
                 count++;
                 break;
 
@@ -262,7 +262,7 @@ $(document).ready(function () {
             default:
                 break;
         }
-        
+
     }); // 캐릭터 대사 switch문 끝
 
     // header 클릭시

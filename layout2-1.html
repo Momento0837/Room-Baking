@@ -45,6 +45,8 @@
       --bg-gradient-01: #faede7;
       --bg-gradient-02: #ddb8a7;
 
+      --bg-color: #cdded6;
+
       --body-color: #ddb8a7;
 
       --text-color: #49230f;
@@ -76,7 +78,7 @@
     }
 
     .main {
-      background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
+      background-color: var(--bg-color);
     }
 
     .item {
@@ -103,7 +105,7 @@
     .sidebar>.item {
       position: absolute;
 
-      top: 0%;
+      top: -100%;
     }
 
     .sidebar>.item:first-child {
@@ -281,20 +283,14 @@
 
     #cute_stick {
       left: -1%;
-
-      top: -30%;
       
-      opacity: 0%;
-      display: none;
+      display: block;
     }
 
     #family_stick {
       right: 46%;
 
-      top: -30%;
-
-      opacity: 0%;
-      display: none;
+      display: block;
     }
 
     #cute, #family{
@@ -553,7 +549,7 @@
 
       <a href="#">
         <div class="shelf-row middle">
-          <img src="images/pinknote.png" alt="PinkNote" class="note">
+          <img src="images/pinknote.png" alt="PinkNote" class="note" id="note">
         </div>
       </a>
 
