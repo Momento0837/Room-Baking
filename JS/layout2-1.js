@@ -54,7 +54,7 @@ $(document).ready(function(){
         $(".bottom").stop().animate({ gap: '1.7%', width: '84%', height: '29%', top: '68%', left: '8%' }, mid, 'easeOutQuad');
     });
 
-    // 핑크노트에 마우스를 올리면 커지는 이벤트
+    // 노트에 마우스를 올리면 커지는 이벤트
     $('.note').on("mouseover", () => {
         $(".note").stop().animate({ width: '17%', height: '16%', top: '84%', left: '60.5%' }, mid, 'easeOutQuad');
     }).on("mouseout", function() {
@@ -82,185 +82,82 @@ $(document).ready(function(){
     line.addEventListener("click", () => {
         switch(count){
             case 0:
-                character.src = "images/character_happy.png"
+                character.src = "images/character_notangry.png";
                 $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
                     line.innerText = "";
-                    line.innerText = "액자 두 개가 보이지?";
+                    line.innerText = "어라? 이거 봐!";
+                    // 노트 보잉보잉
+                    $(".note").stop().animate({ width: '17%', height: '16%', top: '84%', left: '60.5%' }, mid, 'easeOutQuad', () =>{
+                        $(".note").stop().animate({ width: '16%', height: '15%', top: '85%', left: '61%' }, mid, 'easeOutQuad', () =>{
+                            $(".note").stop().animate({ width: '17%', height: '16%', top: '84%', left: '60.5%' }, mid, 'easeOutQuad', () => {
+                                $(".note").stop().animate({ width: '16%', height: '15%', top: '85%', left: '61%' }, mid, 'easeOutQuad');
+                            });
+                        });
+                    });
                 });
                 $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
                 count++;
                 break;
 
             case 1:
-                character.src = "images/character_happy.png"
                 $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
                     line.innerText = "";
-                    line.innerText = "여기에 아주 소중한 사진들을 끼워 둘 거야.";
+                    line.innerText = "엄청 중요한 정보가 담긴 책인가봐!";
                 });
                 $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
                 count++;
                 break;
-                
+
             case 2:
-                character.src = "images/character.png"
+                character.src = "images/character.png";
                 $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
                     line.innerText = "";
-                    line.innerText = "예를 들어...";
+                    line.innerText = "어차피 이 책도 정리해야 하니까, 얼른 열어보자.";
                 });
                 $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-
-                // 전체적 비율 조정
-                $(".bookshelf").animate({ left: '50%' }, superlong);
-                $(".block").animate({ left: '7%' }, superlong);
-                $(".overlay").animate({ left: '55%', top: '70%', width: '40%', height: '25%' }, superlong);
-                $("#line").animate({ top: '40%' }, long);
-                $(".character-box").animate({ top: '18%', left: '80%' }, superlong); 
-
                 count++;
                 break;
 
             case 3:
+                character.src = "images/character_happy.png";
                 $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
                     line.innerText = "";
-                    line.innerText = "이렇게 src 옆에 입력하고 엔터를 누른다면?";
+                    line.innerHTML = "중요한 책이면 여기 다시 놓지 뭐! *^^* <br><span>(책을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>";
                 });
                 $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                
-                const stick_answer = document.getElementById("stick-answer");
-                const example = "cute_stick.png";
-
-                for(let i = 0; i < example.length; i++){
-                    setTimeout(() => {
-                        stick_answer.innerText += example.charAt(i);
-                    }, i * 70);
-                }
-
                 count++;
                 break;
 
             case 4:
-                character.src = "images/character_happy.png"
+                character.src = "images/character_happy.png";
                 $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
                     line.innerText = "";
-                    line.innerText = "짜잔~!";
+                    line.innerHTML = "중요한 책이면 여기 다시 놓지 뭐! *^^* <br><span>(책을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>";
                 });
                 $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-
-                $("#cute_stick").css({display: 'block'});
-                $("#cute_stick").animate({top: '0%', opacity: '100%'}, long, 'easeOutQuad');
-                count++;
-                break;
-
-            case 5:
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "사진이 이렇게 들어가게 돼.";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 6:
-                character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "자, 너도 해봐!";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 7:
-
-                // 캐릭터 아래로 내려가는 모션
-                $(".character-box").stop().animate({top: '17%'}, short, 'easeOutQuad');
-                $(".character-box").animate({top: '120%'}, long, 'easeOutQuad', () => {
-                    $(".main-box").hide();
-                });
-
-                // 캐릭터 말풍선 내려가는 모션
-                $(".overlay").animate({top: '120%'}, long, 'easeOutQuad');
-
-                $("#stick-answer").animate({opacity: '0%'}, long, 'easeOutQuad', function() {
-                    $(this).css({display: 'none'});
-                });
-
-                $(".bookshelf").animate({ left: '40%' }, superlong);
-
-                $("#condition").animate({opacity: '0%'}, long, 'easeOutQuad', function() {
-                    
-                    condition.innerHTML = '🌼 <span>&lt;img&gt;</span> 태그는 <span>&lt;img src="(사진 경로)" alt="대체텍스트"&gt;</span> <br>형태로 사용합니다. <br><br>✅ 사진 경로는 <span>" family_stick.png "</span> 입니다.';
-                    answer.innerHTML = '<br><br><br><br><br>&lt;div class="container"&gt;<br><br>  &lt;img src="                                      " alt="가족 빗자루"&gt;<br><br>&lt;/div&gt;<br><br></br>';
-                    
-                    $("#imgtext").css({display: 'block'});
-                    $("#imgtext").animate({opacity: '100%'}, long, 'easeOutQuad');
-                });
-                $("#answer").animate({opacity: '0%'}, long, 'easeOutQuad');
-
-                $("#stick-answer").animate({opacity: '100%'}, long, 'easeOutQuad');
-                $("#condition").animate({opacity: '100%'}, long, 'easeOutQuad');
-                $("#answer").animate({opacity: '100%'}, long, 'easeOutQuad');
-
-                count++;
-                break;
-
-            case 8:
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "생각보다 쉽지? 벌써 반이나 왔어!";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 9:
-                character.src = "images/character.png"
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "응? 그게 무슨 소리냐고?";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 10:
-                character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "에이~ 시작이 반이라잖아!";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 11:
-                character.src = "images/character_notangry.png"
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "그보다 얼른 다음 것도 하러 가자.";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-                count++;
-                break;
-
-            case 12:
-                character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%'}, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerHTML = "얼른 얼른! <br> <span>(상단의 Main을 눌러 다음으로 이동할 수 있습니다.)</span>";
-                });
-                $("#line").animate({ opacity: '100%'}, short, 'easeOutQuad');
-
-                // Header탭 내려오는 애니메이션. 나머지는 꼬리만 보이게.
-                    $(".sidebar > :first-child").animate({top: '-70%'}, 1100,'easeOutQuad');
-                    $(".sidebar > :nth-child(2)").animate({top: '0%'}, 1100,'easeOutQuad');
-
                 count++;
                 break;
 
             default:
                 break;
         }
+
+        const note = document.getElementById("bookshelf");
+
+        note.addEventListener('click', (event) => {
+            // 캐릭터 아래로 내려가는 모션
+            $(".character-box").stop().animate({top: '17%'}, short, 'easeOutQuad');
+            $(".character-box").animate({top: '120%'}, long, 'easeOutQuad', () => {
+                $(".main-box").hide();
+            });
+
+            // 캐릭터 말풍선 내려가는 모션
+            $(".overlay").animate({top: '120%'}, long, 'easeOutQuad');
+
+            $(".whitebox").css({display: 'block'});
+            $(".whitebox").animate({opacity: '100%'}, long, 'easeOutQuad', function () { window.location.href = 'layout1.html'; });
+        });
+        
         const imganswer = "family_stick.png";
 
         document.addEventListener('keydown', (event) => {
@@ -285,9 +182,9 @@ $(document).ready(function(){
             }
         });
 
-        $(".sidebar > :nth-child(2)").on("click", function () {
-            $(".whitebox").css({ display: 'block' });
-            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2-1.html'; });
-        })
+        // $(".sidebar > :nth-child(2)").on("click", function () {
+        //     $(".whitebox").css({ display: 'block' });
+        //     $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2-1.html'; });
+        // })
     });
 });

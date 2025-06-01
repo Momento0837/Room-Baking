@@ -54,7 +54,7 @@ $(document).ready(function(){
         $(".bottom").stop().animate({ gap: '1.7%', width: '84%', height: '29%', top: '68%', left: '8%' }, mid, 'easeOutQuad');
     });
 
-    // 핑크노트에 마우스를 올리면 커지는 이벤트
+    // 노트에 마우스를 올리면 커지는 이벤트
     $('.note').on("mouseover", () => {
         $(".note").stop().animate({ width: '17%', height: '16%', top: '84%', left: '60.5%' }, mid, 'easeOutQuad');
     }).on("mouseout", function() {
@@ -271,7 +271,7 @@ $(document).ready(function(){
                     $("#family_stick").css({display: 'block'});
                     $("#family_stick").animate({top: '0%', opacity: '100%'}, long, 'easeOutQuad');
 
-                    // 캐릭터 아래로 올라가는 모션
+                    // 캐릭터 위로 올라가는 모션
                     $(".main-box").show();
                     $(".character-box").stop().animate({top: '17%'}, short, 'easeOutQuad');
                     $(".character-box").animate({top: '18%'}, long, 'easeOutQuad');
