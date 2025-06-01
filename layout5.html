@@ -5,122 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃5</title>
     <style>
-        /*body {
-            width: 100%;
-            height: 100%;
-            overflow:hidden;*/
-            /*background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));*/
-        /*}
-
-        .main {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-        }
-        .whiteboard{*//*1300x800*/
-            /*position:absolute;
-            width:33vw;
-            height:37vh;
-            left:5%;
-            top:15%;
-        }
-        .whiteboardimg{
-            width:100%;
-            height:100%;
+        @font-face {
+            font-family: 'NanumSquareNeoLight';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
         }
 
-        .brush{*//*400x650*/
-            /*position:absolute;
-            width:13vw;
-            height:40vh;
-            left:9%;
-            bottom:0;
-            transform:scale(-1, 1);
-        }
-        .brushimg{
-            width:100%;
-            height:100%;
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
         }
 
-        .frame{*//*500x700*/
-            /*position:absolute;
-            width:45vw;
-            height:22vh;
-            right:0;
-            top:12%;
-            display:flex;
-            justify-content:center;
-            gap:40%;
+        @font-face {
+            font-family: 'NanumSquareNeoBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
         }
 
-        .frame > .item:nth-child(2n+1){
-            width:8vw;
-            height:20vh;
-            background-color:#ff3692;
-            margin:0;
-        }
-        
-        .frame > .item:nth-child(2){
-            position:absolute;
-            width:8vw;
-            height:20vh;
-            bottom:0;
-            background-color:#ff3692;
-            margin:0;
+        @font-face {
+            font-family: 'NanumSquareNeoExtraBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
         }
 
-        .frameimg{
-            width:100%;
-            height:100%;
-        }
-        
-        .table{
-            position:absolute;
-            width: 55vw;
-            height: 22vh;
-            right: 0;
-            bottom: 0;
-        }
-        .tableimg{
-            width:100%;
-            height:100%;
-        }
-        
-        .moniter{*//*800x570*/
-            /*position:absolute;
-            width:20vw;
-            height:26vh;
-            right:12%;
-            bottom:22%;
-        }
-        .moniterimg{
-            width:100%;
-            height:100%;
+        @font-face {
+            font-family: 'NanumSquareNeoHeavy';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
         }
 
-        .speaker{*//*200x300*/
-            /* position:absolute;
-            width:55vw;
-            height:17vh;
-            right:0;
-            bottom:22%;
-            display:flex;
-            justify-content:center;
-            gap:65%;
+        @font-face {
+            font-family: 'NanumSquareNeoVariable';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
         }
-        .speaker > .item{
-            width:6vw;
-            height:17vh;
-            margin:0;
-        }
-        .speakerimg{
-            width:100%;
-            height:100%;
-        } */
 
         :root{
             --bg-gradient-01: #ffefef;
             --bg-gradient-02: #f07575;
+
+            --bg-color: #faecb9;
 
             --body-color: #484242;
         }
@@ -129,14 +54,18 @@
             margin: 0 auto;
             padding: 0;
             box-sizing: border-box;
+
+            color: var(--text-color);
+
+            font-family: 'NanumSquareNeo', 'Arial', 'Times new Roman';
         }
 
-        img{
+        img {
             width: 100%;
             height: 100%;
         }
 
-        body{
+        body {
             background-color: var(--body-color);
 
             display: flex;
@@ -145,7 +74,7 @@
         }
 
         .main{
-            background-image: linear-gradient(165deg, var(--bg-gradient-01), var(--bg-gradient-02));
+            background-color: var(--bg-color);
         }
 
         @media(min-width: 1300px){
@@ -225,6 +154,7 @@
         .frame > .item{
             width: 20%;
             height: 80%;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
         }
 
         .table{
@@ -279,17 +209,17 @@
 <body>
     <div class="main">
         <div class="whiteboard">
-            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboard-img">
+            <img src="images/site.png" alt="Whiteboard" class="whiteboard-img">
         </div>
         <div class="brush">
             <img src="images/brush.png" alt="Brush" class="brushimg">
         </div>
         <div class="frame">
             <div class="item">
-                <img src="images/frame2.png" alt="Frame1" class="frameimg">
+                <img src="images/lady_character.png" alt="Frame1" class="frameimg">
             </div>
             <div class="item">
-                <img src="images/frame2.png" alt="Frame2" class="frameimg">
+                <img src="images/frame3.png" alt="Frame2" class="frameimg">
             </div>
             <div class="item">
                 <img src="images/frame2.png" alt="Frame3" class="frameimg">
