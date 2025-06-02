@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃7</title>
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeoLight';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: 'NanumSquareNeoBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: 'NanumSquareNeoExtraBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: 'NanumSquareNeoHeavy';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: 'NanumSquareNeoVariable';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
+        }
+
+        :root {
+            --bg-gradient-01: #ffefef;
+            --bg-gradient-02: #f07575;
+
+            --bg-color: #faecb9;
+            --bg-2nd-color: #cdded6;
+            --bg-3rd-color: #ffc2c2;
+
+            --body-color: #484242;
+            --text-color: #49230f;
+            --side-text: #4b4747;
+            --border-color: #775441;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            color: var(--text-color);
+
+            font-family: 'NanumSquareNeo', 'Arial', 'Times new Roman';
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: var(--body-color);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            background-color: var(--bg-color);
+        }
+
+        @media(min-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1920px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 1300px){
+            .main{
+                position: relative;
+                max-width: 1300px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        @media(max-width: 800px){
+            .main{
+                position: relative;
+                max-width: 800px;
+                width: 100%;
+                aspect-ratio: 34 / 16;
+
+                overflow: hidden;
+            }
+        }
+
+        .frame{
+            border: 4.5vw solid rgb(92, 55, 36);
+
+            border-radius: 0% 0%;
+
+            position: absolute;
+
+            overflow: hidden;
+
+            width: 30%;
+            height: 75%;
+
+            box-shadow: 0px 1px 20px rgba(41, 35, 27, 0.3);
+        }
+
+        .main > .frame:nth-child(1) {
+            left: 10.5%;
+            top: 10%;
+            
+            border-radius: 0% 0%;
+        }
+
+        .main > .frame:nth-child(2) {
+            left: 60.5%;
+            top: 10%;
+
+            border-radius: 0% 0%;
+        }
+
+        .main > .frame:nth-child(3) {
+            left: 110.5%;
+            top: 10%;
+
+            border-radius: 0% 0%;
+        }
+
+        .frameimg{
+            position: absolute;
+
+            left: -10%;
+            top: -10%;
+
+            width:120%;
+            height:120%;
+        }
+
+        .character-box {
+            position: absolute;
+
+            left: 82%;
+            top: 36%;
+
+            width: 16%;
+            height: 54%;
+
+            z-index: 7;
+        }
+
+        #character {
+            position: absolute;
+
+            left: 0%;
+            top: 0%;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+
+            top: 55%;
+            left: 50%;
+
+            width: 47%;
+            height: 38.5%;
+            z-index: 6;
+        }
+
+        #h1 {
+            position: absolute;
+
+            left: 4%;
+            top: 11%;
+
+            width: 100%;
+            height: 20%;
+
+            font-size: clamp(1rem, 2.5vw, 3rem);
+            font-weight: bolder;
+        }
+
+        #line {
+            position: absolute;
+
+            top: 32%;
+            left: 4%;
+
+            width: 100%;
+            height: 76%;
+
+            font-size: clamp(0.8rem, 1.9vw, 2.3rem);
+            font-weight: lighter;
+            line-height: 75%;
+
+            opacity: 100%;
+        }
+
+        #line>span {
+            font-size: clamp(0.7rem, 1.5vw, 2.1rem);
+        }
+
+        .block {
+            position: absolute;
+
+            top: 10%;
+            /* 정상 값은 10% */
+            left: 50.1%;
+
+            width: 47%;
+            height: 38%;
+            clear: left;
+
+            box-shadow: 0px 4px 6px #1a19193a;
+
+            z-index: 5;
+        }
+
+        .condition {
+            position: absolute;
+
+            top: 9%;
+            left: 6%;
+
+            width: 88%;
+            height: 22.5%;
+
+            padding: 2% 3% 3% 3%;
+
+            text-align: center;
+            font-size: clamp(0.3rem, 1.2vw, 1.4rem);
+            line-height: 160%;
+        }
+
+        .condition>span {
+            font-weight: bold;
+        }
+
+        #condition {
+            opacity: 0%;
+        }
+
+        #answer {
+            opacity: 90%;
+        }
+
+        #answer>span {
+            opacity: 100%;
+            font-family: 'NanumSquareNeoHeavy';
+        }
+
+        .answer {
+            position: absolute;
+
+            top: 35%;
+            left: 5%;
+
+            width: 88%;
+            height: 43%;
+
+            padding: 4% 3% 3% 4%;
+
+            white-space: pre-wrap;
+            text-align: left;
+            font-size: clamp(0.3rem, 1.35vw, 1.6rem);
+            font-weight: bold;
+            line-height: 100%;
+
+            opacity: 100%;
+        }
+
+        #rtext {
+            position: absolute;
+
+            width: 15%;
+            height: 12%;
+
+            top: 58.5%;
+            left: 34.1%;
+
+            text-align: center;
+            font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            opacity: 0%;
+
+            display: none;
+        }
+
+        #rtext:focus {
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            outline: none;
+        }
+
+        #stick-answer {
+            position: absolute;
+
+            width: 15%;
+            height: 12%;
+
+            top: 58.5%;
+            left: 34.1%;
+
+            padding: 0.6% 0 0 0;
+
+            text-align: center;
+            font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            background-color: #fff;
+
+            opacity: 0%;
+            display: block;
+        }
+
+        .whitebox {
+            opacity: 100%;
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #fff;
+
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <div class="whitebox"></div>
+    <div class="main">
+        <div class="frame">
+            <img src="images/lady_character.png" alt="Frame" class="frameimg">
+        </div>
+        <div class="frame">
+            <img src="images/jump_character.png" alt="Frame" class="frameimg">
+        </div>
+        <div class="frame">
+            <img src="images/character_family.png" alt="Frame" class="frameimg">
+        </div>
+
+        <div class="box block">
+            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <p class="condition" id="condition">
+                <span>🚨 액자가 너무 각짐!</span>
+            </p>
+            <p class="answer" id="answer">
+            </p>
+            <p id="stick-answer"></p>
+            <input id="rtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+
+        </div>
+        
+        <div class="character-box"><img src="images/character_smile.png" alt="캐릭터" id="character"></div>
+        <div class="overlay">
+            <img src="images/block2-css.png" alt="투명박스" id="chat">
+
+            <h1 id="h1">빗자루</h1>
+            <a href="#">
+                <p id="line">자, 이번에는 액자야.</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="JS/frame.js"></script>
+</body>
+</html>
