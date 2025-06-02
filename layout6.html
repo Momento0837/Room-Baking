@@ -189,6 +189,92 @@
             font-size: clamp(0.7rem, 1.5vw, 2.1rem);
         }
 
+        .block {
+            position: absolute;
+
+            top: 10%;
+            /* 정상 값은 10% */
+            left: 50.1%;
+
+            width: 47%;
+            height: 38%;
+            clear: left;
+
+            box-shadow: 0px 4px 6px #1a19193a;
+        }
+
+        #answer {
+            opacity: 100%;
+        }
+
+        .answer {
+            position: absolute;
+
+            top: 14.5%;
+            left: 6%;
+
+            width: 88%;
+            height: 70%;
+
+            padding: 4% 3% 3% 3%;
+
+            white-space: pre-wrap;
+            text-align: left;
+            font-size: clamp(0.3rem, 1.35vw, 1.6rem);
+            font-weight: bold;
+            line-height: 100%;
+
+            opacity: 100%;
+        }
+
+        #bgctext {
+            position: absolute;
+
+            width: 28%;
+            height: 6%;
+
+            top: 22%;
+            left: 29.5%;
+
+            text-align: center;
+            font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            opacity: 0%;
+
+            display: none;
+        }
+
+        #bgctext:focus {
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            outline: none;
+        }
+
+        #stick-answer {
+            position: absolute;
+
+            width: 15%;
+            height: 12%;
+
+            top: 46.1%;
+            left: 42%;
+
+            padding: 0.6% 0 0 0;
+
+            text-align: center;
+            font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+            border-color: var(--border-color);
+            border-style: dashed;
+
+            background-color: #fff;
+
+            opacity: 100%;
+            display: block;
+        }
+
         .whitebox {
             opacity: 100%;
 
@@ -207,14 +293,25 @@
 <body>
     <div class="whitebox"></div>
     <div class="main">
+        <div class="box block">
+            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <p class="answer" id="answer"><br>body{
+                <br>        background-color:                        ;
+                <br>}
+            </p>
+            <p id="stick-answer">#c984f9</p>
+            <input id="bgctext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+
+        </div>
+
         <div class="brush">
             <img src="images/brush.png" alt="Brush" class="brushimg">
         </div>
         <div class="character-box"><img src="images/character_happy.png" alt="캐릭터" id="character"></div>
         <div class="overlay">
-            <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
+            <img src="images/block2-css.png" alt="투명박스" id="chat">
 
-            <h1>빗자루</h1>
+            <h1 id="h1">빗자루</h1>
             <a href="#">
                 <p id="line">안녕 안녕~ 또 보네!</p>
             </a>
