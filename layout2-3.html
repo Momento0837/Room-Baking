@@ -44,7 +44,7 @@
     :root {
       --bg-gradient-01: #faede7;
       --bg-gradient-02: #ddb8a7;
-      
+
       --bg-color: #cdded6;
 
       --body-color: #ddb8a7;
@@ -152,7 +152,7 @@
       z-index: 2;
     }
 
-    .condition{
+    .condition {
       position: absolute;
 
       top: 5%;
@@ -170,19 +170,19 @@
       opacity: 100%;
     }
 
-    .condition > span{
+    .condition>span {
       font-weight: bold;
     }
 
-    #condition{
+    #condition {
       opacity: 100%;
     }
 
-    #answer{
+    #answer {
       opacity: 100%;
     }
 
-    .answer{
+    .answer {
       position: absolute;
 
       top: 29%;
@@ -192,7 +192,7 @@
       height: 60%;
 
       padding: 2% 3% 3% 3%;
-      
+
       white-space: pre-wrap;
       text-align: left;
       font-size: clamp(0.3rem, 1.35vw, 1.6rem);
@@ -202,14 +202,16 @@
       opacity: 100%;
     }
 
-    #imgtext{
+    #imgtext {
       position: absolute;
 
-      width: 28%;
+      width: 25%;
       height: 6%;
 
-      top: 62.2%;
-      left: 29.5%;
+      top: 62%;
+      left: 23%;
+
+      padding: 0.8% 0 0 0;
 
       text-align: center;
       font-size: clamp(0.3rem, 1.2vw, 1.6rem);
@@ -221,21 +223,21 @@
       display: none;
     }
 
-    #imgtext:focus{
+    #imgtext:focus {
       border-color: var(--border-color);
       border-style: dashed;
 
       outline: none;
     }
 
-    #stick-answer{
+    #stick-answer {
       position: absolute;
 
       width: 25%;
       height: 6%;
 
       top: 62%;
-      left: 29.5%;
+      left: 23%;
 
       padding: 0.8% 0 0 0;
 
@@ -271,35 +273,8 @@
       width: 80%;
       height: 21.3%;
     }
-    
-    .top>.picture{
-      position: absolute;
 
-      top: 0%;
-
-      width: 26%;
-      height: 100%; 
-    }
-
-    #cute_stick {
-      left: -1%;
-
-      top: -30%;
-      
-      opacity: 0%;
-      display: none;
-    }
-
-    #family_stick {
-      right: 46%;
-
-      top: -30%;
-
-      opacity: 0%;
-      display: none;
-    }
-
-    #cute, #family{
+    .top>.picture {
       position: absolute;
 
       top: 0%;
@@ -308,15 +283,38 @@
       height: 100%;
     }
 
-    #cute{
+    #cute_stick {
+      left: -1%;
+
+      display: block;
+    }
+
+    #family_stick {
+      right: 46%;
+
+      display: block;
+    }
+
+    #cute,
+    #family {
+      position: absolute;
+
+      top: 0%;
+
+      width: 26%;
+      height: 100%;
+    }
+
+    #cute {
       left: -1%;
     }
 
-    #family{
+    #family {
       right: 46%;
     }
 
-    .frame1, .picture {
+    .frame1,
+    .picture {
       left: -1%;
       top: 0;
 
@@ -408,7 +406,7 @@
       display: block;
     }
 
-    .character-box{
+    .character-box {
       position: absolute;
 
       left: 77%;
@@ -470,7 +468,7 @@
       opacity: 100%;
     }
 
-    #line > span{
+    #line>span {
       font-size: clamp(0.7rem, 1.5vw, 2.1rem);
     }
 
@@ -486,13 +484,72 @@
 
       z-index: 99;
     }
+
+    .tagbox {
+      position: absolute;
+
+      top: 15%;
+      left: 56%;
+
+      width: 35%;
+      height: 9%;
+    }
+
+    .nametag {
+      position: absolute;
+
+      border: 0.3vw solid var(--border-color);
+      border-radius: 0.5vw;
+      background-color: #ffffff;
+
+      text-align: center;
+
+      display: none;
+    }
+
+    #h1 {
+      top: -100%;
+      left: 6%;
+
+      width: 20%;
+      height: 20%;
+
+      padding-top: 1.3%;
+      font-size: clamp(1rem, 2.5vw, 3rem);
+    }
+
+    #h2 {
+      position: absolute;
+
+      left: 42%;
+      top: -100%;
+
+      width: 17%;
+      height: 17%;
+
+      padding-top: 1.7%;
+      font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+
+    #h3 {
+      position: absolute;
+
+      left: 77%;
+      top: -100%;
+
+      width: 14%;
+      height: 14%;
+
+      padding-top: 1.5%;
+      font-size: clamp(1rem, 1.3vw, 2rem);
+    }
   </style>
 </head>
 
 <body>
   <script src="JS/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="JS/layout2.js"></script>
+  <script src="JS/layout2-3.js"></script>
 
   <div class="whitebox"></div>
   <div class="main">
@@ -525,12 +582,15 @@
 
     <div class="box block">
       <img src="images/block3.png" alt="Block" class="blockimg">
-      <p class="condition" id="condition">🌼 <span>&lt;img&gt;</span> 태그는 <span>&lt;img src="(사진 경로)" alt="대체텍스트"&gt;</span> <br>형태로 사용합니다.
-        <br><br>✅ 사진 경로는 <span>" cute_stick.png "</span> 입니다.</p>
+      <p class="condition" id="condition">🌼 <span>&lt;hn&gt;</span> 태그는 <span>&lt;hn&gt; (내용) &lt;/hn&gt;</span> 형태로
+        작성합니다.
+        <br><span>&lt;h1&gt;</span> 부터 <span>&lt;h6&gt;</span> 까지, 중요한 것부터 써내려가는게 좋습니다.
+        <br><br>✅ 이름표에 들어갈 내용은 <span>" 사진첩 "</span> 입니다.
+      </p>
       <p class="answer" id="answer">
         <br><br>
-        <br>&lt;div class="container"&gt;
-        <br>  &lt;img src="                                  " alt="귀여운 빗자루"&gt;
+        <br>&lt;div class="box" id="green"&gt;
+        <br>      &lt;h1&gt;                                  &lt;/h1&gt;
         <br>&lt;/div&gt;
         <br><br>
       </p>
@@ -538,14 +598,14 @@
       <input id="imgtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
     </div>
 
-    <div class="box bookshelf">
+    <div class="box bookshelf" id="bookshelf">
       <a href="#">
         <div class="shelf-row top">
           <div id="cute">
             <img src="images/lady_character.png" alt="cute_stick" class="picture cute" id="cute_stick">
             <img src="images/block1.png" alt="Frame" class="frame1">
           </div>
-          
+
           <div id="family">
             <img src="images/character_family.png" alt="family_stick" class="picture family" id="family_stick">
             <img src="images/block1.png" alt="Frame" class="frame1">
@@ -555,27 +615,35 @@
 
       <a href="#">
         <div class="shelf-row middle">
-          <img src="images/pinknote.png" alt="PinkNote" class="note">
+          <img src="images/pinknote.png" alt="PinkNote" class="note" id="note">
         </div>
       </a>
 
       <a href="#" class="shelf-row bottom">
-        <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div>
-        <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div>
-        <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div>
+        <div class="item">
+          <img src="images/box1.png" alt="Box1" class="boximg">
+          <h1 class="nametag" id="h1"></h1>
+        </div>
+        <div class="item">
+          <h2 class="nametag" id="h2"></h2>
+          <img src="images/box2.png" alt="Box2" class="boximg">
+        </div>
+        <div class="item">
+          <h3 class="nametag" id="h3"></h3>
+          <img src="images/box3.png" alt="Box3" class="boximg">
+        </div>
       </a>
 
       <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
     </div>
 
-    <div class="main-box"></div>
     <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
     <div class="overlay">
       <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
 
       <h1>빗자루</h1>
       <a href="#">
-        <p id="line">자, Header를 한 번 보자.</p>
+        <p id="line">마지막으로 Footer를 살펴보자!</p>
       </a>
 
     </div>
