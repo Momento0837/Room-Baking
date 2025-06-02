@@ -40,6 +40,37 @@ function moveBrushByPath(path) {
     moveNext();
 }
 
+
+const bgcanswer = "#faecb9";
+
+document.addEventListener('keydown', (event) => {
+    const useranswer = document.getElementById('bgctext').value;
+
+    if (event.key === 'Enter' && useranswer === bgcanswer) {
+        // 시작 좌표로 먼저 이동
+        const { left, top } = gridToPercent(path[0].x, path[0].y);
+        brush.style.left = `${left}%`;
+        brush.style.top = `${top}%`;
+        setTimeout(() => moveBrushByPath(path), 300); // 0.3초 후 이동 시작
+        setTimeout(() => { $(".main").animate({ backgroundColor: '#faecb9' }, superlong, 'easeOutQuad') }, 2000);
+
+        $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+            $("#h1").text("빗자루");
+            $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
+
+            $(".character-box").animate({ opacity: 1 }, long, 'easeOutQuad');
+        });
+
+        $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
+            line.innerText = "";
+            line.innerText = "역시 똑똑해~";
+        });
+        $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
+
+        $("#line").on('click');
+    }
+});
+
 // 페이지가 로드된 후
 window.addEventListener('DOMContentLoaded', () => {
     $(".whitebox").animate({ opacity: '0%' }, long, 'easeOutQuad', function () {
@@ -56,7 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { $(".overlay").animate({ top: '55%' }, superlong, 'easeOutQuad'); }, 300);
 
     // 브러쉬 올라오는 애니메이션
-    setTimeout(() => { $(".brush").animate({ top: '37%' }, superlong, 'easeOutQuad'); }, 600);
+    setTimeout(() => { $(".brush").animate({ top: '37.5%' }, superlong, 'easeOutQuad'); }, 600);
 
     // 캐릭터 위 아래로 왔다갔다 하는 애니메이션
     $("#character").animate({ top: '-1%' }, long, 'easeOutQuad');
@@ -82,13 +113,13 @@ window.addEventListener('DOMContentLoaded', () => {
         switch (count) {
             case 0:
                 character.src = "images/character.png";
-                chating("방 정리는 마치고 온 것 맞지?");
+                chating("책장 정리는 마치고 온 것 맞지?");
                 count++;
                 break;
 
             case 1:
                 character.src = "images/character_scary.png";
-                chating("(대충 못 믿겠다는 눈빛)");
+                chating("설마... 안했겠어...?");
                 count++;
                 break;
 
@@ -134,7 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 $(".block").animate({ top: '10%' }, mid, 'easeOutQuad');
                 $(".overlay").animate({ width: '46%', left: '51%' }, long, 'easeOutQuad');
                 $(".overlay").animate({ width: '47%', left: '50%' }, mid, 'easeOutQuad');
-                $(".character-box").animate({ top: '36%', left: '85%' }, long, 'easeOutQuad');
+                $(".character-box").animate({ top: '36%', left: '82%' }, long, 'easeOutQuad');
                 $("#h1").animate({ left: '4%' }, long, 'easeOutQuad');
                 $("#line").animate({ left: '4%' }, long, 'easeOutQuad');
                 count++;
@@ -150,7 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 chating("여기에 원하는 색상을 입력하고...");
 
                 const stick_answer = document.getElementById("stick-answer");
-                const example = "#faecb9";
+                const example = "#ffc2c2";
 
                 for (let i = 0; i < example.length; i++) {
                     setTimeout(() => {
@@ -168,48 +199,86 @@ window.addEventListener('DOMContentLoaded', () => {
                 brush.style.left = `${left}%`;
                 brush.style.top = `${top}%`;
                 setTimeout(() => moveBrushByPath(path), 300); // 0.3초 후 이동 시작
-                setTimeout(() => {$(".main").animate({ backgroundColor: '#ffc2c2' }, superlong, 'easeOutQuad')}, 2000);
+                setTimeout(() => { $(".main").animate({ backgroundColor: '#ffc2c2' }, superlong, 'easeOutQuad') }, 2000);
                 count++;
                 break;
 
             case 12:
                 character.src = "images/character_happy.png";
-                chating("내가 말했지? 쉬운 거라고~");
+                chating("짠~ 배경색이 바뀌었지?");
                 count++;
                 break;
 
             case 13:
-                character.src = "images/character.png";
-                chating("이건 background-color라는 속성이야!");
+                chating("내가 말했잖아! 쉬운 거라고.");
                 count++;
                 break;
 
             case 14:
-                chating("이름 그대로 배경색이라는 거지.");
+                character.src = "images/character.png";
+                chating("근데, 너무 단조로운 색 같아.");
                 count++;
                 break;
 
             case 15:
-                character.src = "images/character_happy.png";
-                chating("어때, 너도 해볼래? *^^*");
+                character.src = "images/character.png";
+                chating("노란색이면 적당할 것 같은데...");
                 count++;
                 break;
 
             case 16:
-                chating("");
-                $(".character-box").animate({ left: '100%' }, long, 'easeOutQuad');
-                $(".overlay > h1").animate({ opacity: 0 }, mid, 'easeOutQuad', function () {
-                    $(".stick").text("나레이션");
-                    $(".overlay > h1").animate({ opacity: 1 }, mid, 'easeOutQuad');
+                $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
+                $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
+                $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    $(".condition").html('✅ 배경색은 <span>" #faecb9 "</span> 입니다.');
+                    $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
-                setTimeout(chating("background-color은 배경색을 지정할 수 있습니다."), 1000);
+                $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    $("#h1").text("나레이션");
+                    $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
+
+                    $("#bgctext").css({ display: 'block' }, long, 'easeOutQuad');
+                    $("#bgctext").animate({ opacity: 1 }, long, 'easeOutQuad');
+                });
+                $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
+                    character.src = "images/character_happy.png";
+                    line.innerText = "";
+                    line.innerHTML = '<span>background-color은 해당 물체의 배경색을 지정할 수 있는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
+                });
+                $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
+                count++;
+                break;
+
+            case 17:
+                chating("그리고 내 안목은 틀리지 않는구만!");
+                count++;
+                break;
+
+            case 18:
+                chating("이 방에 맞춰서 다른 것도 꾸미러 가자.");
+                count++;
+                break;
+
+            case 19:
+                $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+                    $("#line").html('<span>(채팅창을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>');
+                });
+                $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
                 count++;
                 break;
 
             default:
                 break;
         }
+
+        if (count > 19) {
+            $("#line").on("click", function () {
+                $(".whitebox").css({ display: 'block' });
+                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'frame.html'; });
+            })
+        }
     });
+
     // 말풍선 함수
     function chating(text) {
         $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
