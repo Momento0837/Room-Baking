@@ -40,11 +40,13 @@ function moveBrushByPath(path) {
     moveNext();
 }
 
-// 페이지가 로드된 후 브러시 이동 시작
+// 페이지가 로드된 후
 window.addEventListener('DOMContentLoaded', () => {
     $(".whitebox").animate({ opacity: '0%' }, long, 'easeOutQuad', function () {
         $(".whitebox").css({ display: 'none' });
-    })
+    });
+
+
 
     // 캐릭터 위 아래로 왔다갔다 하는 애니메이션
     $("#character").animate({ top: '-1%' }, long, 'easeOutQuad');
@@ -78,6 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const character = document.getElementById("character");
     const line = document.getElementById("line");
     const bubble = document.getElementById("chat");
+    const stick = document.getElementById("h1");
     let count = 0;
 
     line.addEventListener("click", () => {
@@ -87,28 +90,98 @@ window.addEventListener('DOMContentLoaded', () => {
                 chating("방 정리는 마치고 온 것 맞지?");
                 count++;
                 break;
-                
+
             case 1:
                 character.src = "images/character_happy.png";
                 chating("얼른 페인트부터 칠해보자!");
                 count++;
                 break;
-                
+
             case 2:
                 character.src = "images/character.png";
                 chating(".... 응? 정리하기 전에 페인트칠 안했냐고?");
                 count++;
                 break;
-                
+
             case 3:
                 character.src = "images/character_scared.png";
                 chating("에이, 그럴 수도 있지. 간단한 건데~!");
                 count++;
                 break;
-                
+
             case 4:
-                character.src = "images/character_scared.png";
+                character.src = "images/character_notangry.png";
                 chating("얼른, 내가 시범 보여줄테니 잘 따라와!");
+                count++;
+                break;
+
+            case 5:
+                chating("봐,");
+                $(".block").animate({ top: '9%' }, long, 'easeOutQuad');
+                $(".block").animate({ top: '10%' }, mid, 'easeOutQuad');
+                $(".overlay").animate({ width: '46%', left: '51%' }, long, 'easeOutQuad');
+                $(".overlay").animate({ width: '47%', left: '50%' }, mid, 'easeOutQuad');
+                $(".character-box").animate({ top: '36%', left: '85%' }, long, 'easeOutQuad');
+                count++;
+                break;
+
+            case 6:
+                character.src = "images/character.png";
+                chating("위에 블럭이 보이지?");
+                count++;
+                break;
+
+            case 7:
+                chating("여기에 원하는 색상을 입력하면...");
+
+                const stick_answer = document.getElementById("stick-answer");
+                const example = "cute_stick.png";
+
+                for (let i = 0; i < example.length; i++) {
+                    setTimeout(() => {
+                        stick_answer.innerText += example.charAt(i);
+                    }, i * 70);
+                }
+                
+                count++;
+                break;
+
+            case 8:
+                character.src = "images/character_happy.png";
+                chating("짠~");
+                count++;
+                break;
+
+            case 9:
+                chating("내가 말했지? 쉬운 거라고~");
+                count++;
+                break;
+
+            case 10:
+                character.src = "images/character.png";
+                chating("이건 background-color라는 속성이야!");
+                count++;
+                break;
+
+            case 11:
+                chating("이름 그대로 배경색이라는 거지.");
+                count++;
+                break;
+
+            case 12:
+                character.src = "images/character_happy.png";
+                chating("어때, 너도 해볼래? *^^*");
+                count++;
+                break;
+
+            case 13:
+                chating("");
+                $(".character-box").animate({ left: '100%' }, long, 'easeOutQuad');
+                $(".overlay > h1").animate({ opacity: 0 }, mid, 'easeOutQuad', function () {
+                    stick.innerText = "나레이션";
+                    $(".overlay > h1").animate({ opacity: 1 }, mid, 'easeOutQuad');
+                });
+                setTimeout(chating("background-color은 배경색을 지정할 수 있습니다."), 1000);
                 count++;
                 break;
 
