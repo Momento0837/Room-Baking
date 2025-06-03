@@ -8,8 +8,32 @@ $(document).ready(function(){
         $(".whitebox").css({display: 'none'});
     });
 
+    $(".html").animate({ width: '101%', height: '101%' }, long, 'easeOutQuad');
+    setTimeout(() => {
+        $(".html").animate({  width: '100%', height: '100%' }, long, 'easeOutQuad');
+    }, 1500); // 딜레이 삭제
+
+    setInterval(function () {
+        $(".html").animate({ width: '101%', height: '101%' }, long, 'easeOutQuad');
+        setTimeout(() => {
+            $(".html").animate({  width: '100%', height: '100%' }, long, 'easeOutQuad');
+        }, 1500);
+    }, 3000);
+
+    $(".css").animate({ width: '101%', height: '101%' }, long, 'easeOutQuad');
+    setTimeout(() => {
+        $(".css").animate({  width: '100%', height: '100%' }, long, 'easeOutQuad');
+    }, 1500); // 딜레이 삭제
+
+    setInterval(function () {
+        $(".css").animate({ width: '101%', height: '101%' }, long, 'easeOutQuad');
+        setTimeout(() => {
+            $(".css").animate({  width: '100%', height: '100%' }, long, 'easeOutQuad');
+        }, 1500);
+    }, 3000);
+
     // html 책장에 마우스를 올리면 조금 커지고, 마우스를 떼면 다시 본래 크기로 돌아감
-    $('.html').on("mouseover", function() {
+    $('.html2').on("mouseover", function() {
         $(this).stop().animate({ width: '30.5%', height: '100.5%' }, mid, 'easeOutQuad');
     }).on("mouseout", function() {
         $(this).stop().animate({ width: '30%', height: '100%' }, mid, 'easeOutQuad');
@@ -21,7 +45,7 @@ $(document).ready(function(){
     });
 
     // css 물감통에 마우스를 올리면 조금 커지고, 마우스를 떼면 다시 본래 크기로 돌아감
-    $('.css').on("mouseover", function() {
+    $('.css2').on("mouseover", function() {
         $(this).stop().animate({ width: '20.5%', height: '25.6%', left: '29.75%', top: '45.5%' }, mid, 'easeOutQuad');
     }).on("mouseout", function() {
         $(this).stop().animate({ width: '20%', height: '25%', left: '30%', top: '46%' }, mid, 'easeOutQuad');
