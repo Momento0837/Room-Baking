@@ -75,145 +75,97 @@ $(document).ready(function () {
         switch (count) {
             case 0:
                 character.src = "images/character_happy.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "나는 널 도와줄 빗자루라고 해. 반가워! *^^*";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("나는 널 도와줄 빗자루라고 해. 반가워! *^^*");
                 count++;
                 break;
             case 1:
                 character.src = "images/character.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "아, 맞다. 우리 지금 뭐 해야 하는지 알지?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("아, 맞다. 우리 지금 뭐 해야 하는지 알지?");
                 count++;
                 break;
 
             case 2:
                 character.src = "images/character_scary.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "바로바로...";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("바로바로...");
                 count++;
                 break;
 
             case 3:
                 character.src = "images/character_happy.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "방 정리!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("방 정리!");
                 count++;
                 break;
 
             case 4:
                 character.src = "images/character_notangry.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "혹시, 정리하는 법은 알고 있어?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("혹시, 정리하는 법은 알고 있어?");
                 count++;
                 break;
 
             case 5:
                 character.src = "images/character_scared.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "뭐? 모른다고?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("뭐? 모른다고?");
                 count++;
                 break;
 
             case 6:
                 character.src = "images/character_scared.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "얼른 설명해줄테니까, 잘 들어!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("얼른 설명해줄테니까, 잘 들어!");
                 count++;
                 break;
 
             case 7:
                 character.src = "images/character.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "자, 봐!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("자, 봐!");
                 count++;
                 break;
 
-            case 8: // 코드 입력 블록 왼쪽으로 넘기기
+            case 8:
+                // 코드 입력 블록 왼쪽으로 넘기기
                 $(".block").animate({ left: '-38%' }, long, 'easeOutQuad');
+
+                // 책장 중앙으로
                 $(".bookshelf").animate({ width: '40%', height: '95%', left: '30%', top: '10%' }, long, 'easeOutQuad');
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "이 책장의 이름은 html이야.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                
+                chating("이 책장의 이름은 html이야.");
                 count++;
                 break;
 
             case 9:
+                // 상단으로 확대
                 $(".bookshelf").animate({ width: '80%', height: '185%', left: '10%', top: '10%' }, long, 'easeOutQuad');
 
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "책장의 가장 윗부분은 header라고도 불려. 여기에는 중요한 것들을 놓아 둘 거야!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("책장의 가장 윗부분은 Header라고도 불려. 여기에는 중요한 것들을 놓아 둘 거야!");
                 count++;
                 break;
 
             case 10:
+                // 중앙으로 이동
                 $(".bookshelf").animate({ width: '80%', height: '185%', left: '10%', top: '-50%' }, long, 'easeOutQuad');
 
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "가운데 부분은 main이라고도 하고, 여러가지 요소가 들어갈 수 있는 공간이야.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("가운데 부분은 Main이라고도 하고, 여러가지 요소가 들어갈 수 있는 공간이야.");
                 count++;
                 break;
 
             case 11:
+                // 하단으로 이동
                 $(".bookshelf").animate({ width: '80%', height: '185%', left: '10%', top: '-110%' }, long, 'easeOutQuad');
 
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "그리고 가장 밑부분은 footer라고 불려. 여기에는 잘 쓰지 않는 것들을 모아 둘 거야.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("그리고 가장 밑부분은 Footer라고 불려. 여기에는 잘 쓰지 않는 것들을 모아 둘 거야.");
                 count++;
                 break;
 
             case 12:
+                // 다시 축소
                 $(".bookshelf").animate({ width: '40%', height: '95%', left: '30%', top: '10%' }, long, 'easeOutQuad');
 
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "이건 중요하니까, 잘 알고 있어야 해. 알겠지?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("이건 중요하니까, 잘 알고 있어야 해. 알겠지?");
                 count++;
                 break;
 
             case 13:
                 character.src = "images/character_notangry.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "음...";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("음...");
                 count++;
                 break;
 
@@ -240,22 +192,14 @@ $(document).ready(function () {
                 break;
 
             case 15:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "먼저, 가장 위쪽 Header를 정리하러 가보자!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("먼저, 가장 위쪽 Header를 정리하러 가보자!");
                 $('.sidebar> :nth-child(2)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
                 $('.sidebar> :nth-child(3)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
                 count++;
                 break;
 
             case 16:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "(Header탭을 눌러, 다음 페이지로 넘어갈 수 있습니다.)";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("(Header탭을 눌러, 다음 페이지로 넘어갈 수 있습니다.)");
                 count++;
                 break;
 
@@ -265,10 +209,20 @@ $(document).ready(function () {
 
     }); // 캐릭터 대사 switch문 끝
 
-    // header 클릭시
-    $(".sidebar > :first-child").on("click", function () {
-        $(".whitebox").css({ display: 'block' });
-        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-header.html'; });
+    // 카운트 16 이상일 때 Header 클릭시
+    if(count > 15){
+        $(".sidebar > :first-child").on("click", function () {
+            $(".whitebox").css({ display: 'block' });
+            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-header.html'; });
+        });
+    }
 
-    })
+    // 말풍선 함수
+    function chating(text) {
+        $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+            line.innerText = "";
+            line.innerText = text;
+        });
+        $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
+    }
 })

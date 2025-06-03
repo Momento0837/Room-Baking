@@ -1,8 +1,10 @@
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
 const short = 300;
 
+// 도큐먼트가 로딩됐을 때
 $(document).ready(function () {
 
     const condition = document.getElementById("condition");
@@ -13,7 +15,6 @@ $(document).ready(function () {
         $(".whitebox").css({ display: 'none' });
     });
 
-    // $(".block").animate({left: '-38%'}, long, 'easeOutQuad');
     $(".bookshelf").animate({ width: '40%', height: '95%', left: '30%', top: '10%' }, long, 'easeOutQuad');
 
     // Main탭 내려오는 애니메이션. 나머지는 꼬리만 보이게.
@@ -100,21 +101,13 @@ $(document).ready(function () {
                 break;
 
             case 1:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "어필하는 걸 보니, 엄청 중요한 정보가 담긴 책인가봐!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("어필하는 걸 보니, 엄청 중요한 정보가 담긴 책인가봐!");
                 count++;
                 break;
 
             case 2:
                 character.src = "images/character.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "어차피 이 책도 정리해야 하니까 얼른 열어보자.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("어차피 이 책도 정리해야 하니까 얼른 열어보자.");
                 count++;
                 break;
 
@@ -123,6 +116,8 @@ $(document).ready(function () {
                 $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
                     line.innerText = "";
                     line.innerHTML = "중요한 책이면 여기 다시 놓지 뭐! *^^* <br><span>(책을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>";
+                    
+                    // 노트 불러오기
                     const note = document.getElementById("note");
 
                     note.addEventListener('click', (event) => {
@@ -134,8 +129,10 @@ $(document).ready(function () {
                         // 캐릭터 말풍선 내려가는 모션
                         $(".overlay").animate({ top: '120%' }, long, 'easeOutQuad');
 
+                        // 노트 올라가기
                         $(".note").animate({ top: '-50%' }, long, 'easeOutQuad');
 
+                        // 흰 박스 페이드인
                         $(".whitebox").css({ display: 'block' });
                         $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-note.html'; });
                     });
@@ -147,10 +144,14 @@ $(document).ready(function () {
             default:
                 break;
         }
-
-        // $(".sidebar > :nth-child(2)").on("click", function () {
-        //     $(".whitebox").css({ display: 'block' });
-        //     $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2-1.html'; });
-        // })
     });
+
+    // 말풍선 함수
+    function chating(text) {
+        $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+            line.innerText = "";
+            line.innerText = text;
+        });
+        $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
+    }
 });

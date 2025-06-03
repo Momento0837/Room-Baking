@@ -1,14 +1,19 @@
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
 const short = 300;
 
+// 정답 상수 선언
 const imganswer = "family_stick.png";
 
+// 정답을 입력하고 엔터를 눌렀을 때
 document.addEventListener('keydown', (event) => {
-    const useranswer = document.getElementById('imgtext').value;
+    const useranswer = document.getElementById('imgtext').value; // input에서 받은 값을 상수에 지정
 
-    if (event.key === 'Enter' && useranswer === imganswer) {
+    if (event.key === 'Enter' && useranswer === imganswer) { // 정답과 같다면
+        
+        // 액자에 사진 넣기
         $("#family_stick").css({ display: 'block' });
         $("#family_stick").animate({ top: '0%', opacity: '100%' }, long, 'easeOutQuad');
 
@@ -20,6 +25,7 @@ document.addEventListener('keydown', (event) => {
         // 캐릭터 말풍선 올라가는 모션
         $(".overlay").animate({ top: '70%' }, long, 'easeOutQuad');
 
+        // 캐릭터 대사
         line.innerText = "";
         line.innerText = "와, 대단해!";
     }
@@ -35,7 +41,6 @@ $(document).ready(function () {
         $(".whitebox").css({ display: 'none' });
     });
 
-    // $(".block").animate({left: '-38%'}, long, 'easeOutQuad');
     $(".bookshelf").animate({ width: '40%', height: '95%', left: '30%', top: '10%' }, long, 'easeOutQuad');
 
     // Header탭 내려오는 애니메이션. 나머지는 꼬리만 보이게.
@@ -99,37 +104,24 @@ $(document).ready(function () {
 
     setTimeout(() => {
         $(".bookshelf").animate({ width: '80%', height: '185%', left: '10%', top: '10%' }, long, 'easeOutQuad');
-    }, 1000);
+    }, 1000); // 책장 확대
 
     line.addEventListener("click", () => {
         switch (count) {
             case 0:
                 character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "액자 두 개가 보이지?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("액자 두 개가 보이지?");
                 count++;
                 break;
 
             case 1:
-                character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "여기에 아주 소중한 사진들을 끼워 둘 거야.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("여기에 아주 소중한 사진들을 끼워 둘 거야.");
                 count++;
                 break;
 
             case 2:
                 character.src = "images/character.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "예를 들어...";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("예를 들어....");
 
                 // 전체적 비율 조정
                 $(".bookshelf").animate({ left: '50%' }, superlong);
@@ -142,15 +134,13 @@ $(document).ready(function () {
                 break;
 
             case 3:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "이렇게 src 옆에 입력하고 엔터를 누른다면?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("이렇게 src 옆에 입력하고 엔터를 누른다면?");
 
+                // #stick-answer 불러오기
                 const stick_answer = document.getElementById("stick-answer");
                 const example = "cute_stick.png";
 
+                // example에 있는 단어를 #stick-answer 안에 한 글자씩 출력
                 for (let i = 0; i < example.length; i++) {
                     setTimeout(() => {
                         stick_answer.innerText += example.charAt(i);
@@ -162,33 +152,22 @@ $(document).ready(function () {
 
             case 4:
                 character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "짜잔~!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("짜잔~!");
 
+                // 액자에 사진 넣기
                 $("#cute_stick").css({ display: 'block' });
                 $("#cute_stick").animate({ top: '0%', opacity: '100%' }, long, 'easeOutQuad');
                 count++;
                 break;
 
             case 5:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "사진이 이렇게 들어가게 돼.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("사진이 이렇게 들어가게 돼.");
                 count++;
                 break;
 
             case 6:
                 character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "자, 너도 해봐!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("자, 너도 해봐!");
                 count++;
                 break;
 
@@ -206,8 +185,10 @@ $(document).ready(function () {
                     $(this).css({ display: 'none' });
                 });
 
+                // 책장을 왼쪽으로 넘기기
                 $(".bookshelf").animate({ left: '40%' }, superlong);
 
+                // 문제 변경
                 $("#condition").animate({ opacity: '0%' }, long, 'easeOutQuad', function () {
 
                     condition.innerHTML = '🌼 <span>&lt;img&gt;</span> 태그는 <span>&lt;img src="(사진 경로)" alt="대체텍스트"&gt;</span> <br>형태로 사용합니다. <br><br>✅ 사진 경로는 <span>" family_stick.png "</span> 입니다.';
@@ -225,42 +206,26 @@ $(document).ready(function () {
                 count++;
                 break;
 
-            case 8:
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "생각보다 쉽지? 벌써 반이나 왔어!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+            case 8: // 정답 입력 후
+                chating("생각보다 쉽지? 벌써 반이나 왔어!");
                 count++;
                 break;
 
             case 9:
                 character.src = "images/character.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "응? 그게 무슨 소리냐고?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("응? 그게 무슨 소리냐고?");
                 count++;
                 break;
 
             case 10:
                 character.src = "images/character_happy.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "에이~ 시작이 반이라잖아!";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("에이~ 시작이 반이라잖아!");
                 count++;
                 break;
 
             case 11:
                 character.src = "images/character_notangry.png"
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "그보다 얼른 다음 것도 하러 가자.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("그보다 얼른 다음 것도 하러 가자.");
                 count++;
                 break;
 
@@ -282,10 +247,23 @@ $(document).ready(function () {
             default:
                 break;
         }
-
-        $(".sidebar > :nth-child(2)").on("click", function () {
-            $(".whitebox").css({ display: 'block' });
-            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-main1.html'; });
-        })
+        
+        // 카운트가 13 이상일 때 메인 탭을 클릭하면 다음 화면으로
+        if(count > 12){
+            $(".sidebar > :nth-child(2)").on("click", function () {
+                $(".whitebox").css({ display: 'block' });
+                $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-main1.html'; });
+            })
+        }
+        
     });
+
+    // 말풍선 함수
+    function chating(text) {
+        $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+            line.innerText = "";
+            line.innerText = text;
+        });
+        $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
+    }
 });
