@@ -119,6 +119,6 @@ $(document).ready(function(){
     // footer 클릭시
     $(".sidebar > :nth-child(3)").on("click", function () {
         $(".whitebox").css({ display: 'block', opacity: '0%' });
-        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2-3.html'; });
+        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-footer.html'; });
     })
 });

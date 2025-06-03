@@ -137,7 +137,7 @@ $(document).ready(function () {
                         $(".note").animate({ top: '-50%' }, long, 'easeOutQuad');
 
                         $(".whitebox").css({ display: 'block' });
-                        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout1.html'; });
+                        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-note.html'; });
                     });
                 });
                 $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');

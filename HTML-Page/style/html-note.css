@@ -215,19 +215,6 @@ body {
     box-shadow: 0 1px 5px black;
 }
 
-.whitebox {
-    display: none;
-
-    opacity: 0%;
-
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: #fff;
-}
-
 .bookshelf {
     position: absolute;
 
@@ -352,7 +339,7 @@ body {
     position: absolute;
 
     width: 100%;
-    height: 100%;
+    aspect-ratio: 34 / 16;
 
     background-color: #fff;
 

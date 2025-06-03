@@ -285,7 +285,7 @@ $(document).ready(function () {
 
         $(".sidebar > :nth-child(2)").on("click", function () {
             $(".whitebox").css({ display: 'block' });
-            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2-1.html'; });
+            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-main1.html'; });
         })
     });
 });

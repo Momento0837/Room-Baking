@@ -268,7 +268,7 @@ $(document).ready(function () {
     // header 클릭시
     $(".sidebar > :first-child").on("click", function () {
         $(".whitebox").css({ display: 'block' });
-        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'layout2.html'; });
+        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-header.html'; });
 
     })
 })

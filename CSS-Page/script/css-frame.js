@@ -223,14 +223,22 @@ window.addEventListener('DOMContentLoaded', function () {
                 count++;
                 break;
 
+            case 13:
+                $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+                    $("#line").html('<span>(채팅창을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>');
+                });
+                $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
+                count++;
+                break;
+
             default:
                 break;
         }
 
-        if (count > 12) {
+        if (count > 13) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
-                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'frame.html'; });
+                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-whiteboard.html'; });
             })
         }
 

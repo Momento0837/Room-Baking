@@ -38,7 +38,7 @@ $(document).ready(function(){
                     $(".noteopen").animate({top: '-100%'}, 1000, 'easeOutQuad');
                     $(".index").animate({top: '-94%'}, long, 'easeOutQuad', function(){
                         // 애니메이션 플레이가 끝난 후 2-2로 돌아가도록 설정
-                        window.location.href = 'layout2-2.html';
+                        window.location.href = 'html-main2.html';
                     });
                 })
             });

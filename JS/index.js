@@ -16,7 +16,7 @@ $(document).ready(function(){
     }).on("click", function(){
         $(".whitebox").css({display: 'block'});
         $(".whitebox").animate({opacity: '100%'}, long, 'easeOutQuad', function(){
-            window.open('layout4.html', '_blank'); // 클릭시 html 메인페이지로 이동
+            window.open('HTML-Page/html-semantic.html', '_blank'); // 클릭시 html 메인페이지로 이동
         });
     });
 
@@ -26,6 +26,6 @@ $(document).ready(function(){
     }).on("mouseout", function() {
         $(this).stop().animate({ width: '20%', height: '25%', left: '30%', top: '46%' }, mid, 'easeOutQuad');
     }).on("click", function(){
-        window.open('layout6.html', '_blank'); // 클릭시 css 메인페이지로 이동
+        window.open('CSS-Page/css-bgc.html', '_blank'); // 클릭시 css 메인페이지로 이동
     });
 });

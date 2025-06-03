@@ -307,7 +307,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (count > 18) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
-                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'monitor.html'; });
+                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-monitor.html'; });
             })
         }
 

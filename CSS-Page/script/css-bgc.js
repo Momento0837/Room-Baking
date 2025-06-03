@@ -277,7 +277,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (count > 19) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
-                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'frame.html'; });
+                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-frame.html'; });
             })
         }
     });
