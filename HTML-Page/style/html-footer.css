@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -76,6 +79,42 @@ body {
     background-color: var(--bg-color);
 }
 
+@media(min-width: 1300px) {
+    .main {
+        position: relative;
+        max-width: 1920px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 1300px) {
+    .main {
+        position: relative;
+        max-width: 1300px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 800px) {
+    .main {
+        position: relative;
+        max-width: 800px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+
+/* 상단바 css =================================================== */
+
+
 .item {
     width: 28%;
     height: 100%;
@@ -128,6 +167,9 @@ body {
 
     filter: blur(0.4px);
 }
+
+
+/* 코드 입력 블록 css =================================================== */
 
 
 .block {
@@ -247,6 +289,10 @@ body {
     display: block;
 }
 
+
+/* 책장 css =================================================== */
+
+
 .bookshelf {
     position: absolute;
 
@@ -256,6 +302,8 @@ body {
     width: 40%;
     height: 95%;
 }
+
+/* 상단 */
 
 .top {
     position: absolute;
@@ -316,6 +364,8 @@ body {
     position: absolute;
 }
 
+/* 중간 */
+
 .middle {
     position: absolute;
 
@@ -335,6 +385,8 @@ body {
     width: 16%;
     height: 15%;
 }
+
+/* 하단 */
 
 .bottom {
     position: absolute;
@@ -358,40 +410,8 @@ body {
 }
 
 
+/* 캐릭터 css =================================================== */
 
-
-
-@media(min-width: 1300px) {
-    .main {
-        position: relative;
-        max-width: 1920px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
-        overflow: hidden;
-    }
-}
-
-@media(max-width: 1300px) {
-    .main {
-        position: relative;
-        max-width: 1300px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
-
-        overflow: hidden;
-    }
-}
-
-@media(max-width: 800px) {
-    .main {
-        position: relative;
-        max-width: 800px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
-
-        overflow: hidden;
-    }
-}
 
 .main-box {
     position: absolute;
@@ -467,6 +487,10 @@ body {
     font-size: clamp(0.7rem, 1.5vw, 2.1rem);
 }
 
+
+/* 화면전환 css =================================================== */
+
+
 .whitebox {
     opacity: 100%;
 
@@ -489,6 +513,10 @@ body {
     width: 35%;
     height: 9%;
 }
+
+
+/* 이름표 css =================================================== */
+
 
 .nametag {
     position: absolute;

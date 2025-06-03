@@ -9,48 +9,57 @@
 </head>
 
 <body>
+    <!-- 스크립트 연결 -->
     <script src="../JS/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="script/html-note.js"></script>
 
+    <!-- 화면전환용 흰 배경 -->
     <div class="whitebox"></div>
 
+    <!-- 메인 -->
     <div class="container">
         <div class="sidebar sidebar-column">
+            <!-- 상단바 Header -->
             <div class="item">
                 <a href="#">
                     <p>
                         Header
                     </p>
                 </a>
-                <img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg">
+                <img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg"> <!-- Header 이미지 -->
             </div>
+            <!-- 상단바 Main -->
             <div class="item">
                 <a href="#">
                     <p>
                         Main
                     </p>
                 </a>
-                <img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg">
+                <img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg"> <!-- Main 이미지 -->
             </div>
+            <!-- 상단바 Footer -->
             <div class="item">
                 <a href="#">
                     <p>
                         Footer
                     </p>
                 </a>
-                <img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg">
+                <img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg"> <!-- Footer 이미지 -->
             </div>
         </div>
 
         <div class="box bookshelf" id="bookshelf">
             <a href="#">
+                <!-- 책장 상단 -->
                 <div class="shelf-row top">
+                    <!-- 액자1 -->
                     <div id="cute">
                         <img src="images/lady_character.png" alt="cute_stick" class="picture cute" id="cute_stick">
                         <img src="images/block1.png" alt="Frame" class="frame1">
                     </div>
 
+                    <!-- 액자2 -->
                     <div id="family">
                         <img src="images/character_family.png" alt="family_stick" class="picture family"
                             id="family_stick">
@@ -60,29 +69,35 @@
             </a>
 
             <a href="#">
+                <!-- 책장 중간 -->
                 <div class="shelf-row middle">
-                    <img src="images/pinknote.png" alt="PinkNote" class="note">
+                    <img src="images/pinknote.png" alt="PinkNote" class="note"> <!-- 노트 -->
                 </div>
             </a>
 
+            <!-- 책장 하단 -->
             <a href="#" class="shelf-row bottom">
-                <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div>
-                <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div>
-                <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div>
+                <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div> <!-- 박스 -->
+                <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div> <!-- 박스 -->
+                <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div> <!-- 박스 -->
             </a>
 
-            <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
+            <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg"> <!-- 책장 이미지 -->
         </div>
 
-        <div class="noteclose">
+        <!-- 노트 닫힌 모습 -->
+        <div class="noteclose"> 
             <a href="#">
                 <img src="images/noteclose.png" alt="Noteclose" class="notecloseimg">
             </a>
         </div>
-        <div class="index">
 
+        <!-- 노트 인덱스 -->
+        <div class="index">
             <img src="images/index.png" alt="Index" class="indeximg">
         </div>
+
+        <!-- 노트 열린 모습 -->
         <div class="noteopen" id="noteopen">
             <a href="#"><img src="images/note.png" alt="Note" class="noteimg"></a>
         </div>

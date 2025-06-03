@@ -1,24 +1,37 @@
 const marker = document.querySelector('.marker');
 const calender = document.getElementById("calender");
+
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
 const short = 300;
+
+// 플레이어가 색상을 고르고, 해당하는 마카의 id를 저장하기 위한 전역 변수
 var marker_color = null;
 
+// 정답 상수 선언
 const blackanswer = "#000";
 const blueanswer = "#0000ff";
 const redanswer = "#ff0000";
 
+// 정답을 입력하고 엔터를 눌렀을 때
 document.addEventListener('keydown', (event) => {
     const colortext = document.getElementById('colortext');
 
-    if (document.activeElement !== colortext) return;
+    if (document.activeElement !== colortext) return; // input창에 커서 안 두고 있으면 진행 x
 
-    const useranswer = colortext.value;
+    const useranswer = colortext.value; // input에서 받은 값을 상수에 저장
 
-
+    // 제대로 입력했는지 확인
     if (event.key === 'Enter' && useranswer === blackanswer || useranswer === blueanswer || useranswer === redanswer) {
+        
+        // 각 색상별로 이벤트를 다르게 하기 위한 if문
+        // 구성은 같음.
+        // > 해당 색상 마카 제외한 마카들을 전부 화면 밖으로 내보내고,
+        // > 캘린더의 글자 색을 해당 마카 색으로 변경.
+        // > 전역변수에 해당 마카의 id를 저장.
+
         if (useranswer === blackanswer) {
             $("#black").animate({ top: '45%' }, long, 'easeOutQuad');
             $("#blue").animate({ top: '100%' }, long, 'easeOutQuad');
@@ -43,6 +56,7 @@ document.addEventListener('keydown', (event) => {
             marker_color = "#red";
         }
 
+        // 캐릭터와 말풍선이 다시 페이드인
         $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
             $("#h1").text("빗자루");
             $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
@@ -50,6 +64,7 @@ document.addEventListener('keydown', (event) => {
             $(".character-box").animate({ opacity: 1 }, long, 'easeOutQuad');
         });
 
+        // 캐릭터 대사
         $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
             line.innerText = "";
             line.innerText = "어때~ 어떤 색 골랐어?";
@@ -60,10 +75,12 @@ document.addEventListener('keydown', (event) => {
 
 // 페이지가 로드된 후
 window.addEventListener('DOMContentLoaded', () => {
+    // 화면전환
     $(".whitebox").animate({ opacity: '0%' }, long, 'easeOutQuad', function () {
         $(".whitebox").css({ display: 'none' });
     });
 
+    // 전체적으로 비율 조정
     $(".overlay").animate({ left: '61%', width: '36%' }, long, 'easeOutQuad', function () {
         $(".overlay").animate({ left: '60%', width: '37%' }, long, 'easeOutQuad');
     });
@@ -130,6 +147,8 @@ window.addEventListener('DOMContentLoaded', () => {
             case 4:
                 character.src = "images/character.png";
                 chating("어디보자, 색깔은...");
+
+                // 마카들을 위로 올리기
                 $("#black").animate({ top: '65%', left: '20%' }, long, 'easeOutQuad');
                 $("#red").animate({ top: '65%', left: '26%' }, long, 'easeOutQuad');
                 $("#blue").animate({ top: '65%', left: '32%' }, long, 'easeOutQuad');
@@ -150,9 +169,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 $('.main>.marker').off(".markerHover"); // 마우스 호버 이벤트 제거
                 character.src = "images/character_happy.png";
                 chating("예쁜 파란색으로~");
+
+                // 파란색 제외 전부 화면 밖으로
                 $("#blue").animate({ top: '45%' }, long, 'easeOutQuad');
                 $("#black").animate({ top: '100%' }, long, 'easeOutQuad');
                 $("#red").animate({ top: '100%' }, long, 'easeOutQuad');
+
                 count++;
                 break;
 
@@ -168,24 +190,33 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 8:
+                // 캐릭터, 말풍선 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
-                $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
-                $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
-                    $(".condition").html('✅ 검정: <span>#000</span>, 파랑: <span>#0000ff</span>, 빨강: <span>#ff0000</span>');
-                    $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
-                });
-                $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
-                    $(".answer").html('<span>.whiteboard </span>{<br><br>      color:                            ;<br><br>}');
-                    $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
-                });
                 $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+
+                    // 빗자루 이름 나레이션으로 변경 후 페이드인
                     $("#h1").text("나레이션");
                     $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
 
+                    // 플레이어 정답 입력창 페이드인
                     $("#colortext").css({ display: 'block' }, long, 'easeOutQuad');
                     $("#colortext").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
 
+                // 빗자루 정답 예시, 조건 페이드아웃
+                $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
+                $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    // 조건 변경 후 다시 페이드인
+                    $(".condition").html('✅ 검정: <span>#000</span>, 파랑: <span>#0000ff</span>, 빨강: <span>#ff0000</span>');
+                    $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
+                });
+                // 자연스러움을 위해 css도 함께 페이드아웃, 인
+                $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    $(".answer").html('<span>.whiteboard </span>{<br><br>      color:                            ;<br><br>}');
+                    $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
+                });
+
+                // 화면 밖으로 나간 마카들을 다시 위로 불러오기
                 $("#black").animate({ top: '65%' }, long, 'easeOutQuad');
                 $("#red").animate({ top: '65%' }, long, 'easeOutQuad');
                 $("#blue").animate({ top: '65%' }, long, 'easeOutQuad');
@@ -199,8 +230,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
+                // 나레이션 대사로 변경
                 $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
-                    character.src = "images/character_happy.png";
                     line.innerText = "";
                     line.innerHTML = '<span>color는 텍스트의 색상을 변경할 수 있는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
                 });
@@ -208,7 +239,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 count++;
                 break;
 
-            case 9:
+            case 9: // 입력 후
                 $('.main>.marker').off(".markerHover"); // 마우스 호버 이벤트 제거
                 character.src = "images/character.png";
                 chating("오, 잘 골랐네!");
@@ -222,6 +253,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 11:
+                // 마카 클릭할 수 있다는 걸 강조
                 console.log(marker_color);
                 $(marker_color).animate({ width: '2.5%', height: '22%' }, short, 'easeOutQuad', () => {
                     $(marker_color).animate({ width: '2%', height: '20%' }, short, 'easeOutQuad', () => {
@@ -233,7 +265,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 count++;
                 break;
 
-            case 12:
+            case 12: // 마카 클릭 이벤트 진행 후
                 character.src = "images/character_happy.png";
                 chating("덕분에 일정 정리하기 편하겠다.");
                 count++;
@@ -269,13 +301,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 18:
+                // 캐릭터 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
                     $(".character-box").css({ display: 'none' });
                 });
+
+                // 빗자루 이름 페이드아웃
                 $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    // 빗자루 이름 나레이션으로 변경 후 페이드인
                     $("#h1").text("나레이션");
                     $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
+
+                // 나레이션 대사로 변경
                 $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
                     $("#line").html('<span>(채팅창을 클릭하여 다음으로 넘어갈 수 있습니다.)</span>');
                 });
@@ -287,23 +325,30 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
-        $(marker_color).off("click").on("click", function () { // 이벤트 중복 방지
+        
+        // 전역변수에 저장된 id의 마카를 클릭하면 진행되는 이벤트.
+        $(marker_color).off("click").on("click", function () { // 이벤트 중복 방지 (··· .off(" click ").on ···)
+
+            // 화이트보드의 윗부분으로 이동하여 글자를 쓰는 듯이 움직임
             $(marker_color).css({ transform: "rotate(15deg)" });
             $(marker_color).animate({ left: '25%', top: '35%' }, mid, 'easeOutQuad');
             $(marker_color).animate({ left: '30%', top: '35%' }, long, 'easeOutQuad', function () {
                 $(marker_color).animate({ top: '75%', left: '2%' }, superlong, 'easeOutQuad');
             });
+
+            // 0.5초 이후 캘린더 글자 페이드인
             setTimeout(function () {
                 $(".calender").animate({ opacity: 1 }, superlong, 'easeOutQuad');
             }, 500);
 
-
+            // 3초 이후 캐릭터 대사 변경
             setTimeout(function () {
                 character.src = "images/character.png";
                 chating("어때? 마음에 들어?");
-            }, 3300);
+            }, 3000);
         });
 
+        // 카운트가 19 이상일 때 채팅창을 클릭하면 다음 화면으로
         if (count > 18) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });

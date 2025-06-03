@@ -1,12 +1,13 @@
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
 const short = 300;
 
 
+// 도큐먼트가 로딩됐을 때
 $(document).ready(function(){
 
-    
     // 캐릭터 위로 올라오는 애니메이션
     setTimeout(() => {
         $(".character-box").animate({ top: '27%' }, superlong, 'easeOutQuad');
@@ -70,11 +71,7 @@ $(document).ready(function(){
         switch (count) {
             case 0:
                 character.src = "images/character_notangry.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "... a 태그에 관한 내용이었다고?";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("... a 태그에 관한 내용이었다고?");
                 count++;
                 break;
                 
@@ -91,11 +88,7 @@ $(document).ready(function(){
                 
             case 2:
                 character.src = "images/character.png";
-                $("#line").animate({ opacity: '0%' }, short, 'easeOutQuad', () => {
-                    line.innerText = "";
-                    line.innerText = "그리고 우리 정말 반이나 왔어.";
-                });
-                $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
+                chating("그리고 우리 정말 반이나 왔어.");
                 count++;
                 break;
                 
@@ -105,6 +98,8 @@ $(document).ready(function(){
                     line.innerText = "";
                     line.innerHTML = "조금만 더 힘내서 정리 끝내보자! <br><span>(상단의 Footer탭을 통해 다음으로 이동할 수 있습니다.)</span>";
                 });
+
+                // Footer 탭 내려오도록
                 $('.sidebar> :nth-child(3)').stop().animate({ top: '0%' }, mid, 'easeOutQuad');
                 $('.sidebar> :nth-child(2)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
                 $("#line").animate({ opacity: '100%' }, short, 'easeOutQuad');
@@ -116,9 +111,21 @@ $(document).ready(function(){
         }
     });
 
-    // footer 클릭시
-    $(".sidebar > :nth-child(3)").on("click", function () {
-        $(".whitebox").css({ display: 'block', opacity: '0%' });
-        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-footer.html'; });
-    })
+    // 카운트 3 이상일 때 footer 클릭시
+    if(count > 2){
+        $(".sidebar > :nth-child(3)").on("click", function () {
+            $(".whitebox").css({ display: 'block', opacity: '0%' });
+            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-footer.html'; });
+        });
+    }
+    
+
+    // 말풍선 함수
+    function chating(text) {
+        $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
+            line.innerText = "";
+            line.innerText = text;
+        });
+        $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
+    }
 });

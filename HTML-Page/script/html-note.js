@@ -1,3 +1,4 @@
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
@@ -13,7 +14,7 @@ $(document).ready(function(){
 
     $(".noteclose").animate({top: '8.5%'}, long, 'easeOutQuad');
     $(".noteclose").animate({top: '7%'}, short, 'easeOutQuad', function(){
-        $(".noteclose").on('click', function(){
+        $(".noteclose").on('click', function(){ // 접힌 노트 클릭하면
             $(".noteopen").css({display: 'block'});
             $(".index").css({display: 'block'});
 
@@ -37,10 +38,10 @@ $(document).ready(function(){
                     // 플레이어가 클릭했을 시 노트를 화면 밖으로 밀어올리도록 설정
                     $(".noteopen").animate({top: '-100%'}, 1000, 'easeOutQuad');
                     $(".index").animate({top: '-94%'}, long, 'easeOutQuad', function(){
-                        // 애니메이션 플레이가 끝난 후 2-2로 돌아가도록 설정
+                        // 애니메이션 플레이가 끝난 후 html-main2로 돌아가도록 설정
                         window.location.href = 'html-main2.html';
                     });
-                })
+                });
             });
         });
     });

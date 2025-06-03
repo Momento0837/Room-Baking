@@ -1,8 +1,12 @@
 const brush = document.querySelector('.brush');
+
+// 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
 const mid = 600;
 const short = 300;
+
+// ======= 우찬씨 작업 =======
 
 // 가로 16, 세로 9 그리드 기준 좌표를 %로 변환하는 함수
 function gridToPercent(x, y) {
@@ -40,20 +44,31 @@ function moveBrushByPath(path) {
     moveNext();
 }
 
+// ======= 우찬씨 작업 끝 =======
 
+
+// 정답 상수 선언
 const bgcanswer = "#faecb9";
 
+// 정답을 입력하고 엔터를 눌렀을 때
 document.addEventListener('keydown', (event) => {
-    const useranswer = document.getElementById('bgctext').value;
+    const useranswer = document.getElementById('bgctext').value; // input에서 받은 값을 상수에 저장
 
-    if (event.key === 'Enter' && useranswer === bgcanswer) {
+    if (event.key === 'Enter' && useranswer === bgcanswer) { // 정답과 같다면
+        // ======= 우찬씨 작업 =======
+
         // 시작 좌표로 먼저 이동
         const { left, top } = gridToPercent(path[0].x, path[0].y);
         brush.style.left = `${left}%`;
         brush.style.top = `${top}%`;
         setTimeout(() => moveBrushByPath(path), 300); // 0.3초 후 이동 시작
+        
+        // ======= 우찬씨 작업 끝 =======
+        
+        // 배경색을 #faecb9로 변경
         setTimeout(() => { $(".main").animate({ backgroundColor: '#faecb9' }, superlong, 'easeOutQuad') }, 2000);
 
+        // 나레이션을 빗자루로 변경
         $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
             $("#h1").text("빗자루");
             $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
@@ -61,6 +76,7 @@ document.addEventListener('keydown', (event) => {
             $(".character-box").animate({ opacity: 1 }, long, 'easeOutQuad');
         });
 
+        // 캐릭터 대사 변경
         $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
             line.innerText = "";
             line.innerText = "역시 똑똑해~";
@@ -161,10 +177,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
             case 8:
                 chating("봐,");
+                
+                // 전체적 비율 조정
                 $(".block").animate({ top: '9%' }, long, 'easeOutQuad');
-                $(".block").animate({ top: '10%' }, mid, 'easeOutQuad');
                 $(".overlay").animate({ width: '46%', left: '51%' }, long, 'easeOutQuad');
+                $(".block").animate({ top: '10%' }, mid, 'easeOutQuad');
                 $(".overlay").animate({ width: '47%', left: '50%' }, mid, 'easeOutQuad');
+
                 $(".character-box").animate({ top: '36%', left: '82%' }, long, 'easeOutQuad');
                 $("#h1").animate({ left: '4%' }, long, 'easeOutQuad');
                 $("#line").animate({ left: '4%' }, long, 'easeOutQuad');
@@ -180,9 +199,11 @@ window.addEventListener('DOMContentLoaded', () => {
             case 10:
                 chating("여기에 원하는 색상을 입력하고...");
 
+                // #stick-answer 불러오기
                 const stick_answer = document.getElementById("stick-answer");
                 const example = "#ffc2c2";
 
+                // example에 있는 단어를 #stick-answer 안에 한 글자씩 출력
                 for (let i = 0; i < example.length; i++) {
                     setTimeout(() => {
                         stick_answer.innerText += example.charAt(i);
@@ -195,10 +216,17 @@ window.addEventListener('DOMContentLoaded', () => {
             case 11:
                 chating("엔터를 누르면?");
                 // 시작 좌표로 먼저 이동
+
+                // ======= 우찬씨 작업 =======
+
                 const { left, top } = gridToPercent(path[0].x, path[0].y);
                 brush.style.left = `${left}%`;
                 brush.style.top = `${top}%`;
                 setTimeout(() => moveBrushByPath(path), 300); // 0.3초 후 이동 시작
+                
+                // ======= 우찬씨 작업 끝 =======
+                
+                // 배경색을 #ffc2c2로 변경
                 setTimeout(() => { $(".main").animate({ backgroundColor: '#ffc2c2' }, superlong, 'easeOutQuad') }, 2000);
                 count++;
                 break;
@@ -227,33 +255,42 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 16:
+                // 캐릭터, 빗자루 정답, 조건, css코드, 대사, 이름 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
                 $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
                 $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    // 조건 변경 후 다시 페이드인
                     $(".condition").html('✅ 배경색은 <span>" #faecb9 "</span> 입니다.');
                     $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
                 $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    // css코드 페이드인
                     $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
 
+                    // 플레이어 입력란 페이드인
                     $("#bgctext").css({ display: 'block' }, long, 'easeOutQuad');
                     $("#bgctext").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
+
+                // 나레이션으로 대사 변경
                 $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
-                    character.src = "images/character_happy.png";
                     line.innerText = "";
                     line.innerHTML = '<span>background-color은 해당 물체의 배경색을 지정하는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
+                    
+                    // 페이드인
+                    $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
+
                 $("#h1").animate({ opacity: 0 }, long, 'easeOutQuad', function(){
+                    // 나레이션으로 변경 후 페이드인
                     $("#h1").text("나레이션");
                     $("#h1").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
-                $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
                 count++;
                 break;
 
             case 17:
-                chating("그리고 내 안목은 틀리지 않는구만!");
+                chating("내 안목은 틀리지 않는구만!");
                 count++;
                 break;
 
@@ -274,6 +311,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
+        // 카운트가 20 이상이라면 채팅창을 클릭했을 때 다음 화면으로
         if (count > 19) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });

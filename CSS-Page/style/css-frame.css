@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -110,6 +113,10 @@ body {
     }
 }
 
+
+/* 액자 css =================================================== */
+
+
 .frame {
     border: 4.5vw solid rgb(92, 55, 36);
 
@@ -155,6 +162,10 @@ body {
     width: 120%;
     height: 120%;
 }
+
+
+/* 캐릭터 css =================================================== */
+
 
 .character-box {
     position: absolute;
@@ -223,6 +234,10 @@ body {
 #line>span {
     font-size: clamp(0.7rem, 1.5vw, 2.1rem);
 }
+
+
+/* 코드 입력 css =================================================== */
+
 
 .block {
     position: absolute;
@@ -340,6 +355,10 @@ body {
     opacity: 0%;
     display: block;
 }
+
+
+/* 화면전환 css =================================================== */
+
 
 .whitebox {
     opacity: 100%;

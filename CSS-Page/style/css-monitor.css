@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -110,6 +113,10 @@ body {
     }
 }
 
+
+/* 책상, 모니터, 스피커 css =================================================== */
+
+
 .table {
     position: absolute;
 
@@ -119,6 +126,8 @@ body {
     bottom: 0;
 }
 
+/* 모니터 */
+
 .moniter {
     position: absolute;
     width: 41vw;
@@ -126,6 +135,8 @@ body {
     right: 17%;
     bottom: 27%;
 }
+
+/* 스피커 */
 
 .speaker {
     position: absolute;
@@ -161,6 +172,10 @@ body {
     width: 100%;
     height: 100%;
 }
+
+
+/* 캐릭터 css =================================================== */
+
 
 .character-box {
     position: absolute;
@@ -231,6 +246,10 @@ body {
 #line>span {
     font-size: clamp(0.7rem, 1.5vw, 2.1rem);
 }
+
+
+/* 코드 입력 css =================================================== */
+
 
 .block {
     position: absolute;
@@ -348,6 +367,10 @@ body {
     opacity: 0%;
     display: block;
 }
+
+
+/* 화면전환 css =================================================== */
+
 
 .whitebox {
     opacity: 100%;

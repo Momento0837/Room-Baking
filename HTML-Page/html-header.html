@@ -9,43 +9,52 @@
 </head>
 
 <body>
+  <!-- 스크립트 연결 -->
   <script src="../JS/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="script/html-header.js"></script>
 
+  <!-- 화면전환용 흰 배경 -->
   <div class="whitebox"></div>
-  <div class="main">
-    <div class="sidebar sidebar-column">
-      <div class="item">
+
+  <div class="main"> <!-- 메인 -->
+
+    <div class="sidebar sidebar-column"> <!-- 상단바 컨테이너 -->
+      <div class="item"> <!-- 상단바 Header -->
         <a href="#">
           <p>
             Header
           </p>
         </a>
-        <img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg">
+        <img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg"> <!-- Header 이미지 -->
       </div>
-      <div class="item">
+      <div class="item"> <!-- 상단바 Main -->
         <a href="#">
           <p>
             Main
           </p>
         </a>
-        <img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg">
+        <img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg"> <!-- Main 이미지 -->
       </div>
-      <div class="item">
+      <div class="item"> <!-- 상단바 Footer -->
         <a href="#">
           <p>
             Footer
           </p>
         </a>
-        <img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg">
+        <img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg"> <!-- Footer 이미지 -->
       </div>
     </div>
 
     <div class="box block">
-      <img src="images/block3.png" alt="Block" class="blockimg">
+      <img src="images/block3.png" alt="Block" class="blockimg"> <!-- 코드 입력창 이미지 -->
+
+      <!-- 조건 -->
       <p class="condition" id="condition">🌼 <span>&lt;img&gt;</span> 태그는 <span>&lt;img src="(사진 경로)" alt="대체텍스트"&gt;</span> <br>형태로 사용합니다.
-        <br><br>✅ 사진 경로는 <span>" cute_stick.png "</span> 입니다.</p>
+        <br><br>✅ 사진 경로는 <span>" cute_stick.png "</span> 입니다.
+      </p>
+
+      <!-- 정답 입력 -->
       <p class="answer" id="answer">
         <br><br>
         <br>&lt;div class="container"&gt;
@@ -53,19 +62,19 @@
         <br>&lt;/div&gt;
         <br><br>
       </p>
-      <p id="stick-answer"></p>
-      <input id="imgtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+      <p id="stick-answer"></p> <!-- 빗자루 정답 예시 -->
+      <input id="imgtext" type="text" placeholder="입력 후 엔터!" autocomplete="off"> <!-- 플레이어 정답 입력 -->
     </div>
 
     <div class="box bookshelf">
       <a href="#">
-        <div class="shelf-row top">
-          <div id="cute">
+        <div class="shelf-row top"> <!-- 책장 상단 -->
+          <div id="cute"> <!-- 액자1 -->
             <img src="images/lady_character.png" alt="cute_stick" class="picture cute" id="cute_stick">
             <img src="images/block1.png" alt="Frame" class="frame1">
           </div>
           
-          <div id="family">
+          <div id="family"> <!-- 액자2 -->
             <img src="images/character_family.png" alt="family_stick" class="picture family" id="family_stick">
             <img src="images/block1.png" alt="Frame" class="frame1">
           </div>
@@ -73,28 +82,28 @@
       </a>
 
       <a href="#">
-        <div class="shelf-row middle">
-          <img src="images/pinknote.png" alt="PinkNote" class="note">
+        <div class="shelf-row middle"> <!-- 책장 중간 -->
+          <img src="images/pinknote.png" alt="PinkNote" class="note"> <!-- 노트 -->
         </div>
       </a>
 
-      <a href="#" class="shelf-row bottom">
-        <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div>
-        <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div>
-        <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div>
+      <a href="#" class="shelf-row bottom"> <!-- 책장 하단 -->
+        <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div> <!-- 박스 -->
+        <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div> <!-- 박스 -->
+        <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div> <!-- 박스 -->
       </a>
 
-      <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
+      <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg"> <!-- 책장 이미지 -->
     </div>
 
     <div class="main-box"></div>
-    <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
-    <div class="overlay">
-      <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
+    <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div> <!-- 캐릭터 이미지 -->
+    <div class="overlay"> <!-- 말풍선 -->
+      <img src="images/가로투명도상자.png" alt="투명박스" id="chat"> <!-- 말풍선 이미지 -->
 
-      <h1>빗자루</h1>
+      <h1>빗자루</h1> <!-- 이름 -->
       <a href="#">
-        <p id="line">자, Header를 한 번 보자.</p>
+        <p id="line">자, Header를 한 번 보자.</p> <!-- 대사 -->
       </a>
 
     </div>
