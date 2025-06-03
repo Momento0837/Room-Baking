@@ -14,7 +14,7 @@ document.addEventListener('keydown', (event) => {
 
         // 캐릭터 위로 올라가는 모션
         $(".main-box").show();
-        $(".character-box").stop().animate({ top: '17%' }, short, 'easeOutQuad');
+        $(".character-box").stop().animate({ top: '17%' }, long, 'easeOutQuad');
         $(".character-box").animate({ top: '18%' }, long, 'easeOutQuad');
 
         // 캐릭터 말풍선 올라가는 모션

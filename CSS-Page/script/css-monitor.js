@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             case 2:
                 character.src = "images/character_scary.png";
-                chating("너 방금 너무 옛날이라고 생각했지.");
+                chating("너 방금 나이 들었다고 생각했지.");
                 count++;
                 break;
 
@@ -171,12 +171,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 10:
-                character.src = "images/character.png";
                 chating("어, 어쨌든 이렇게 여백을 줄 수 있어.");
                 count++;
                 break;
 
             case 11:
+                character.src = "images/character.png";
                 chating("아직도 스피커가 너무 먼데...");
                 count++;
                 break;
