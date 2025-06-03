@@ -233,9 +233,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     $(".condition").html('✅ 배경색은 <span>" #faecb9 "</span> 입니다.');
                     $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
-                $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
-                    $("#h1").text("나레이션");
-                    $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
+                $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
 
                     $("#bgctext").css({ display: 'block' }, long, 'easeOutQuad');
                     $("#bgctext").animate({ opacity: 1 }, long, 'easeOutQuad');
@@ -243,7 +242,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
                     character.src = "images/character_happy.png";
                     line.innerText = "";
-                    line.innerHTML = '<span>background-color은 해당 물체의 배경색을 지정할 수 있는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
+                    line.innerHTML = '<span>background-color은 해당 물체의 배경색을 지정하는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
+                });
+                $("#h1").animate({ opacity: 0 }, long, 'easeOutQuad', function(){
+                    $("#h1").text("나레이션");
+                    $("#h1").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
                 $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
                 count++;

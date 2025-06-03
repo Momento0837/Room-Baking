@@ -13,6 +13,8 @@ document.addEventListener('keydown', (event) => {
     const useranswer = rtext.value;
 
     if (event.key === 'Enter' && useranswer === r1answer) {
+        $(".frame:nth-child(2)").animate({ borderRadius: '30%' }, long, 'easeOutQuad');
+
         $("#rtext").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
             $("#rtext").val("");
             $("#rtext").animate({ opacity: 1 }, long, 'easeOutQuad');
@@ -20,14 +22,19 @@ document.addEventListener('keydown', (event) => {
 
         $("#condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
             $(".condition").html('✅ Radius는 <span>" 50% "</span> 입니다.');
+
+            $(".frame:nth-child(2)").animate({ left: '-40.5%' }, long, 'easeOutQuad');
+            $(".frame:nth-child(3)").animate({ left: '10.5%' }, long, 'easeOutQuad');
         }); // 문제 변경
-        $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad');
-        
-        $("#condition").animate({ opacity: 1 }, long, 'easeOutQuad');
-        $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
+
+        $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+            $("#condition").animate({ opacity: 1 }, long, 'easeOutQuad');
+            $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
+        });
     }
 
     if (event.key === 'Enter' && useranswer === r2answer) {
+        $(".frame:nth-child(3)").animate({ borderRadius: '50%' }, long, 'easeOutQuad');
         $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
             $("#h1").text("빗자루");
             $(".overlay > h1").animate({ opacity: 1 }, long, 'easeOutQuad');
@@ -47,8 +54,19 @@ window.addEventListener('DOMContentLoaded', function () {
     $(".whitebox").animate({ opacity: '0%' }, long, 'easeOutQuad', function () {
         $(".whitebox").css({ display: 'none' });
     });
-    // frame 클래스를 가진 모든 요소를 선택
-    const frames = document.querySelectorAll('.frame');
+
+    // 캐릭터 위 아래로 왔다갔다 하는 애니메이션
+    $("#character").animate({ top: '-1%' }, long, 'easeOutQuad');
+    setTimeout(() => {
+        $("#character").animate({ top: '1%' }, long, 'easeOutQuad');
+    }, 1500); // 딜레이 삭제
+
+    setInterval(function () {
+        $("#character").animate({ top: '-1%' }, long, 'easeOutQuad');
+        setTimeout(() => {
+            $("#character").animate({ top: '0%' }, long, 'easeOutQuad');
+        }, 1500);
+    }, 3000);
 
     // 캐릭터 대사
     const character = document.getElementById("character");
@@ -93,7 +111,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 });
 
                 $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
-                    $(".condition").html('✅ Radius는 <span>" 50% 50% "</span> 입니다.');
+                    $(".condition").html('✅ Radius는 <span>" 50% "</span> 입니다.');
                     $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
 
@@ -128,7 +146,7 @@ window.addEventListener('DOMContentLoaded', function () {
                             }, 60);
                         }, 60);
                     }, 60);
-                    
+
                     setTimeout(function () {
                         example = "50%";
                         for (let i = 0; i < example.length; i++) {
@@ -137,10 +155,10 @@ window.addEventListener('DOMContentLoaded', function () {
                             }, i * 50);
                         }
                         $(".frame:nth-child(1)").animate({ borderRadius: '50%' }, long, 'easeOutQuad');
-                    }, 700);
+                    }, 500);
                 });
 
-                setTimeout(function () { chating("둥글게 만들 수 있어."); }, 1400);
+                setTimeout(function () { chating("둥글게 만들 수 있어."); }, 1200);
 
                 count++;
                 break;
@@ -156,6 +174,9 @@ window.addEventListener('DOMContentLoaded', function () {
                 $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
                     $(".condition").html('✅ Radius는 <span>" 30% "</span> 입니다.');
                     $(".condition").animate({ opacity: 1 }, long, 'easeOutQuad');
+                });
+                $("#answer").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
+                    $("#answer").animate({ opacity: 1 }, long, 'easeOutQuad');
                 });
                 $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
                     $("#h1").text("나레이션");
@@ -179,9 +200,40 @@ window.addEventListener('DOMContentLoaded', function () {
                 count++;
                 break;
 
+            case 9:
+                chating("어때, 마음에 들지?");
+                count++;
+                break;
+
+            case 10:
+                character.src = "images/character_notangry.png";
+                chating("... 뭐? 마음에 안든다고?");
+                count++;
+                break;
+
+            case 11:
+                character.src = "images/character_happy.png";
+                chating("내 마음에 드니까 괜찮아. *^^*");
+                count++;
+                break;
+
+            case 12:
+                character.src = "images/character_notangry.png";
+                chating("그보다, 시간이 없어. 다음으로 가자!");
+                count++;
+                break;
+
             default:
                 break;
         }
+
+        if (count > 12) {
+            $("#line").on("click", function () {
+                $(".whitebox").css({ display: 'block' });
+                $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'frame.html'; });
+            })
+        }
+
     });
 
     // 말풍선 함수
@@ -192,10 +244,4 @@ window.addEventListener('DOMContentLoaded', function () {
         });
         $("#line").animate({ opacity: 1 }, short, 'easeOutQuad');
     }
-
-    // 
-    // 액자 둥글게 만들기
-    // frames.forEach(function(frame) {
-    //     frame.style.borderRadius = '50%'; // 원하는 값으로 조절
-    //     frame.style.overflow = 'hidden';   // 내용이 넘치지 않게
 });
