@@ -1,344 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃4</title>
-    <style>
-        @font-face {
-            font-family: 'NanumSquareNeoLight';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: 'NanumSquareNeo';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: 'NanumSquareNeoBold';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: 'NanumSquareNeoExtraBold';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: 'NanumSquareNeoHeavy';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: 'NanumSquareNeoVariable';
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
-            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
-        }
-
-        :root{
-            --bg-gradient-01: #faede7;
-            --bg-gradient-02: #ddb8a7;
-
-            --bg-color: #cdded6;
-
-            --body-color: #ddb8a7;
-
-            --text-color: #49230f;
-            --side-text: #4b4747;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-            color: var(--text-color);
-
-            font-family: 'NanumSquareNeo', 'Arial', 'Times new Roman';
-        }
-
-        img{
-            width: 100%;
-            height: 100%;
-        }
-
-        body{
-            background-color: var(--body-color);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .main{
-            background-color: var(--bg-color);
-        }
-
-        @media(min-width: 1300px){
-            .main{
-                position: relative;
-                max-width: 1920px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
-
-                overflow: hidden;
-            }
-        }
-
-        @media(max-width: 1300px){
-            .main{
-                position: relative;
-                max-width: 1300px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
-
-                overflow: hidden;
-            }
-        }
-
-        @media(max-width: 800px){
-            .main{
-                position: relative;
-                max-width: 800px;
-                width: 100%;
-                aspect-ratio: 34 / 16;
-
-                overflow: hidden;
-            }
-        }
-
-        .item{
-            width: 28%;
-            height: 100%;
-        }
-
-        .sidebar{
-            position: absolute;
-            left: 7%;
-
-            display: flex;
-            
-            justify-content: center;
-            gap: 3%;
-            
-            width: 40%;
-            height: 7%;
-            overflow: hidden;
-        }
-
-        .sidebar > .item{
-            position: absolute;
-            
-            top: -100%;
-        }
-
-        .sidebar>.item:first-child{
-            left: 2%;
-        }
-
-        .sidebar>.item:nth-child(3){
-            left: 70%;
-        }
-
-        .item > a > p{
-            position: absolute;
-
-            font-size: clamp(0.3rem, 1.2vw, 1.6rem);
-            font-weight: bold;
-
-            text-align: center;
-
-            top: 16%;
-
-            width: 100%;
-            height: 100%;
-
-            color: var(--side-text);
-
-            filter: blur(0.4px);
-        }
-
-        .block{
-            position: absolute;
-
-            top: 100%; /* 정상 값은 10% */
-            left: 7%;
-
-            width: 40%;
-            height: 87%;
-            clear: left;
-
-            box-shadow: 0px 6px 10px #1a19193a;
-        }
-
-        .bookshelf{
-            position: absolute;
-
-            top: 100%;
-            left: 50%;
-
-            width: 40%;
-            height: 95%;
-        }
-
-        .top{
-            position: absolute;
-            
-            left: 10%;
-            top: 8.5%;
-
-            text-align: center;
-
-            width: 80%;
-            height: 21.3%;
-        }
-
-        .top>.frame1{
-            position: absolute;
-
-            top: 0%;
-
-            width: 26%;
-            height: 100%;
-        }
-
-        .top > :first-child{
-            left: -1%;
-        }
-
-        .top> :nth-child(2){
-            right: 46%;
-        }
-
-        .middle{
-            position: absolute;
-
-            left: 10%;
-            top: 38.5%;
-
-            width: 80%;
-            height: 21.3%;
-        }
-
-        .note{
-            position: absolute;
-
-            top: 85%;
-            left: 61%;
-
-            width: 16%;
-            height: 15%;
-        }
-
-        .bottom{
-            position: absolute;
-
-            left: 8%;
-            top: 68%;
-            
-            display: flex;
-
-            justify-content: center;
-            align-items: flex-end;
-            gap: 1.7%;
-
-            width: 84%;
-            height: 29%;
-        }
-
-        .bottom>.item{
-            width: 35%;
-            height: 65%;
-        }
-
-        .whitebox{
-            opacity: 100%;
-
-            position: absolute;
-
-            width: 100%;
-            height: 100%;
-
-            background-color: #fff;
-
-            z-index: 99;
-        }
-
-        .main-box {
-            position: absolute;
-            top: 10%;
-            left: 0;
-            width: 100%;
-            height: 80%;
-
-            display: block;
-        }
-
-        .character {
-            position: absolute;
-
-            left: 77%;
-            top: 120%;
-
-            width: 16%;
-            height: 68%;
-            z-index: 1;
-        }
-
-        .overlay {
-            position: absolute;
-
-            top: 120%;
-            left: 4%;
-
-            width: 92.5%;
-            height: 48%;
-        }
-
-        .overlay > h1{
-            position: absolute;
-
-            left: 3%;
-            top: 11%;
-
-            width: 100%;
-            height: 20%;
-
-            font-size: clamp(1rem, 2.5vw, 3rem);
-            font-weight: bolder;
-        }
-
-        #line{
-            position: absolute;
-            
-            top: 32%;
-            left: 3%;
-
-            width: 100%;
-            height: 76%;
-
-            font-size: clamp(0.8rem, 1.9vw, 2.3rem);
-            font-weight: lighter;
-
-            opacity: 0%;
-        }
-    </style>
+    <title>RoomBaking : Semantic</title>
+    <link rel="stylesheet" href="style/html-semantic.css" type="text/css">
 </head>
+
 <body>
-    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="JS/layout4.js"></script>
+    <script src="script/html-semantic.js"></script>
 
     <div class="whitebox"></div>
 
     <div class="main">
-        
+
         <div class="sidebar sidebar-column">
             <div class="item">
                 <a href="#">
@@ -395,16 +73,19 @@
             <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
         </div>
 
-        
+
         <div class="main-box">
             <div class="character"><img src="images/character.png" alt="캐릭터" id="character"></div>
             <div class="overlay">
                 <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
-                
+
                 <h1>빗자루</h1>
-                <a href="#"><p id="line">안녕?</p></a>
+                <a href="#">
+                    <p id="line">안녕?</p>
+                </a>
             </div>
         </div>
     </div>
 </body>
+
 </html>
