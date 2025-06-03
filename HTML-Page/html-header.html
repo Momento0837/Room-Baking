@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomBaking : Header</title>
+  <link rel="stylesheet" href="style/html-header.css" type="text/css">
+</head>
+
+<body>
+  <script src="../JS/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="script/html-header.js"></script>
+
+  <div class="whitebox"></div>
+  <div class="main">
+    <div class="sidebar sidebar-column">
+      <div class="item">
+        <a href="#">
+          <p>
+            Header
+          </p>
+        </a>
+        <img src="images/sidebar1.png" alt="Sidebar1" class="sidebarimg">
+      </div>
+      <div class="item">
+        <a href="#">
+          <p>
+            Main
+          </p>
+        </a>
+        <img src="images/sidebar2.png" alt="Sidebar2" class="sidebarimg">
+      </div>
+      <div class="item">
+        <a href="#">
+          <p>
+            Footer
+          </p>
+        </a>
+        <img src="images/sidebar3.png" alt="Sidebar3" class="sidebarimg">
+      </div>
+    </div>
+
+    <div class="box block">
+      <img src="images/block3.png" alt="Block" class="blockimg">
+      <p class="condition" id="condition">🌼 <span>&lt;img&gt;</span> 태그는 <span>&lt;img src="(사진 경로)" alt="대체텍스트"&gt;</span> <br>형태로 사용합니다.
+        <br><br>✅ 사진 경로는 <span>" cute_stick.png "</span> 입니다.</p>
+      <p class="answer" id="answer">
+        <br><br>
+        <br>&lt;div class="container"&gt;
+        <br>  &lt;img src="                                  " alt="귀여운 빗자루"&gt;
+        <br>&lt;/div&gt;
+        <br><br>
+      </p>
+      <p id="stick-answer"></p>
+      <input id="imgtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+    </div>
+
+    <div class="box bookshelf">
+      <a href="#">
+        <div class="shelf-row top">
+          <div id="cute">
+            <img src="images/lady_character.png" alt="cute_stick" class="picture cute" id="cute_stick">
+            <img src="images/block1.png" alt="Frame" class="frame1">
+          </div>
+          
+          <div id="family">
+            <img src="images/character_family.png" alt="family_stick" class="picture family" id="family_stick">
+            <img src="images/block1.png" alt="Frame" class="frame1">
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="shelf-row middle">
+          <img src="images/pinknote.png" alt="PinkNote" class="note">
+        </div>
+      </a>
+
+      <a href="#" class="shelf-row bottom">
+        <div class="item"><img src="images/box1.png" alt="Box1" class="boximg"></div>
+        <div class="item"><img src="images/box2.png" alt="Box2" class="boximg"></div>
+        <div class="item"><img src="images/box3.png" alt="Box3" class="boximg"></div>
+      </a>
+
+      <img src="images/bookshelf4.png" alt="Bookshelf" class="bookshelfimg">
+    </div>
+
+    <div class="main-box"></div>
+    <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
+    <div class="overlay">
+      <img src="images/가로투명도상자.png" alt="투명박스" id="chat">
+
+      <h1>빗자루</h1>
+      <a href="#">
+        <p id="line">자, Header를 한 번 보자.</p>
+      </a>
+
+    </div>
+  </div>
+</body>
+
+</html>
