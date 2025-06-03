@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumSquareNeoLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoHeavy';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoVariable';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
+}
+
+:root {
+    --bg-gradient-01: #ffefef;
+    --bg-gradient-02: #f07575;
+
+    --bg-color: #faecb9;
+    --bg-2nd-color: #cdded6;
+    --bg-3rd-color: #ffc2c2;
+
+    --body-color: #484242;
+    --text-color: #49230f;
+    --side-text: #4b4747;
+    --border-color: #775441;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: var(--text-color);
+
+    font-family: 'NanumSquareNeo', 'Arial', 'Times new Roman';
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: var(--bg-color);
+}
+
+@media(min-width: 1300px) {
+    .main {
+        position: relative;
+        max-width: 1920px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 1300px) {
+    .main {
+        position: relative;
+        max-width: 1300px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 800px) {
+    .main {
+        position: relative;
+        max-width: 800px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+.table {
+    position: absolute;
+
+    width: 100%;
+    height: 27%;
+
+    bottom: 0;
+}
+
+.moniter {
+    position: absolute;
+    width: 41vw;
+    height: 52vh;
+    right: 17%;
+    bottom: 27%;
+}
+
+.speaker {
+    position: absolute;
+
+    width: 100%;
+    height: 27%;
+
+    bottom: 27%;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+}
+
+.speaker>.item {
+    position: absolute;
+
+    width: 9%;
+    height: 100%;
+}
+
+.speaker>.item:nth-child(1) {
+    left: 8%;
+
+}
+
+.speaker>.item:nth-child(2) {
+    right: 5%;
+}
+
+.speakerimg {
+    width: 100%;
+    height: 100%;
+}
+
+.character-box {
+    position: absolute;
+
+    left: 82%;
+    top: 36%;
+
+    width: 16%;
+    height: 54%;
+
+    z-index: 7;
+}
+
+#character {
+    position: absolute;
+
+    left: 0%;
+    top: 0%;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+
+    top: 55%;
+    left: 50%;
+
+    background-color: #ffffffbe;
+
+    width: 47%;
+    height: 38.5%;
+    z-index: 6;
+}
+
+#h1 {
+    position: absolute;
+
+    left: 4%;
+    top: 11%;
+
+    width: 100%;
+    height: 20%;
+
+    font-size: clamp(1rem, 2.5vw, 3rem);
+    font-weight: bolder;
+}
+
+#line {
+    position: absolute;
+
+    top: 32%;
+    left: 4%;
+
+    width: 100%;
+    height: 76%;
+
+    font-size: clamp(0.8rem, 1.9vw, 2.3rem);
+    font-weight: lighter;
+    line-height: 75%;
+
+    opacity: 100%;
+}
+
+#line>span {
+    font-size: clamp(0.7rem, 1.5vw, 2.1rem);
+}
+
+.block {
+    position: absolute;
+
+    top: 10%;
+    /* 정상 값은 10% */
+    left: 50.1%;
+
+    width: 47%;
+    height: 38%;
+    clear: left;
+
+    box-shadow: 0px 4px 6px #1a19193a;
+
+    z-index: 5;
+}
+
+.condition {
+    position: absolute;
+
+    top: 9%;
+    left: 6%;
+
+    width: 88%;
+    height: 22.5%;
+
+    padding: 2.9% 3% 3% 3%;
+
+    text-align: center;
+    font-size: clamp(0.3rem, 1.2vw, 1.4rem);
+    line-height: 160%;
+}
+
+.condition>span {
+    font-weight: bold;
+}
+
+#condition {
+    opacity: 0%;
+}
+
+#answer {
+    opacity: 0%;
+}
+
+#answer>span {
+    opacity: 100%;
+    font-family: 'NanumSquareNeoHeavy';
+}
+
+.answer {
+    position: absolute;
+
+    top: 35%;
+    left: 5%;
+
+    width: 88%;
+    height: 43%;
+
+    padding: 4% 3% 3% 4%;
+
+    white-space: pre-wrap;
+    text-align: left;
+    font-size: clamp(0.3rem, 1.35vw, 1.6rem);
+    font-weight: bold;
+    line-height: 100%;
+
+    opacity: 100%;
+}
+
+#ltext {
+    position: absolute;
+
+    width: 15%;
+    height: 11.5%;
+
+    top: 64.25%;
+    left: 19.8%;
+
+    text-align: center;
+    font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+    border-color: var(--border-color);
+    border-style: dashed;
+
+    opacity: 0%;
+
+    display: none;
+}
+
+#ltext:focus {
+    border-color: var(--border-color);
+    border-style: dashed;
+
+    outline: none;
+}
+
+#stick-answer {
+    position: absolute;
+
+    width: 15%;
+    height: 11.5%;
+
+    top: 64.25%;
+    left: 19.8%;
+
+    padding: 0.8% 0 0 0;
+
+    text-align: center;
+    font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+    border-color: var(--border-color);
+    border-style: dashed;
+
+    background-color: #fff;
+
+    opacity: 0%;
+    display: block;
+}
+
+.whitebox {
+    opacity: 100%;
+
+    position: absolute;
+
+    width: 100%;
+    aspect-ratio: 34 / 16;
+
+    background-color: #fff;
+
+    z-index: 99;
+}

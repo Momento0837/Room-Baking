@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomBaking : Border-Radius</title>
+    <link rel="stylesheet" href="style/css-frame.css" type="text/css">
+</head>
+<body>
+    <div class="whitebox"></div>
+    <div class="main">
+        <div class="frame">
+            <img src="images/lady_character.png" alt="Frame" class="frameimg">
+        </div>
+        <div class="frame">
+            <img src="images/jump_character.png" alt="Frame" class="frameimg">
+        </div>
+        <div class="frame">
+            <img src="images/character_family.png" alt="Frame" class="frameimg">
+        </div>
+
+        <div class="box block">
+            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <p class="condition" id="condition">
+                <span>🚨 액자가 너무 각짐!</span>
+            </p>
+            <p class="answer" id="answer">
+            </p>
+            <p id="stick-answer"></p>
+            <input id="rtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+
+        </div>
+        
+        <div class="character-box"><img src="images/character_smile.png" alt="캐릭터" id="character"></div>
+        <div class="overlay">
+            <img src="images/block2-css.png" alt="투명박스" id="chat">
+
+            <h1 id="h1">빗자루</h1>
+            <a href="#">
+                <p id="line">자, 이번에는 액자야.</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script/css-frame.js"></script>
+</body>
+</html>

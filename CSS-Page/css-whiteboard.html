@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomBaking : Color</title>
+    <link rel="stylesheet" href="style/css-whiteboard.css" type="text/css">
+</head>
+<body>
+    <div class="whitebox"></div>
+    <div class="main">
+        <div class="box block">
+            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <p class="condition" id="condition">
+                ✅ 검정: <span>#000</span>, 파랑: <span>#0000ff</span>, 빨강: <span>#ff0000</span>
+            </p>
+            <p class="answer" id="answer">
+            </p>
+            <p id="stick-answer"></p>
+            <input id="colortext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+        </div>
+
+        <div class="whiteboard">
+            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboardimg">
+            <img src="images/calender.png" alt="달력" class="calender" id="calender">
+        </div>
+        
+        <div class="marker" id="red">
+            <img src="images/Redmarker.png" alt="Marker" class="markerimg">
+        </div>
+
+        <div class="marker" id="blue">
+            <img src="images/Bluemarker.png" alt="Marker" class="markerimg">
+        </div>
+
+        <div class="marker" id="black">
+            <img src="images/marker.png" alt="Marker" class="markerimg">
+        </div>
+
+        <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
+        <div class="overlay">
+            <img src="images/block2-css.png" alt="투명박스" id="chat">
+
+            <h1 id="h1">빗자루</h1>
+            <a href="#">
+                <p id="line">오, 이번엔 화이트보드!</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script/css-whiteboard.js"></script>
+</body>
+
+</html>

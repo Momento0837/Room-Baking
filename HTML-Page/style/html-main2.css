@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumSquareNeoLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoHeavy';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareNeoVariable';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
+}
+
+:root {
+    --bg-gradient-01: #faede7;
+    --bg-gradient-02: #ddb8a7;
+
+    --bg-color: #cdded6;
+
+    --body-color: #484242;
+
+    --text-color: #49230f;
+    --side-text: #4b4747;
+    --border-color: #775441;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: var(--text-color);
+
+    font-family: 'NanumSquareNeo', 'Arial', 'Times new Roman';
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--bg-color);
+}
+
+.item {
+    width: 28%;
+    height: 100%;
+}
+
+.sidebar {
+    position: absolute;
+    left: 7%;
+
+    display: flex;
+
+    justify-content: center;
+    gap: 3%;
+
+    width: 40%;
+    height: 7%;
+    overflow: hidden;
+
+    z-index: 98;
+}
+
+.sidebar>.item {
+    position: absolute;
+
+    top: 0%;
+}
+
+.sidebar>.item:first-child {
+    left: 2%;
+
+    top: -70%;
+}
+
+.sidebar>.item:nth-child(3) {
+    left: 70%;
+
+    top: -70%;
+}
+
+.item>a>p {
+    position: absolute;
+
+    font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+    font-weight: bold;
+
+    text-align: center;
+
+    top: 16%;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--side-text);
+
+    filter: blur(0.4px);
+}
+
+@media(min-width: 1300px) {
+    .container {
+        position: relative;
+
+        max-width: 1920px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 1300px) {
+    .container {
+        position: relative;
+
+        max-width: 1300px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 800px) {
+    .container {
+        position: relative;
+
+        max-width: 800px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+.index {
+    display: none;
+
+    position: absolute;
+
+    left: 50%;
+    top: 14.5%;
+
+    /* width: 12%; */
+    width: 3%;
+    height: 6.5%;
+
+    z-index: 1;
+}
+
+.noteopen {
+    overflow: visible;
+
+    display: none;
+
+    position: absolute;
+
+    /* left: 15%; */
+    left: 46.5%;
+    top: 7%;
+    bottom: 0%;
+
+    /* width: 70%; */
+    width: 7%;
+    height: 85%;
+
+    box-shadow: 0 1px 5px black;
+}
+
+.noteclose {
+    position: absolute;
+
+    left: 46.5%;
+    top: -100%;
+
+    width: 7%;
+    height: 85%;
+
+    box-shadow: 0 1px 5px black;
+}
+
+.bookshelf {
+    position: absolute;
+
+    top: -60%;
+    left: 10%;
+
+    width: 80%;
+    height: 185%;
+}
+
+.top {
+    position: absolute;
+
+    left: 10%;
+    top: 8.5%;
+
+    text-align: center;
+
+    width: 80%;
+    height: 21.3%;
+}
+
+.top>.picture {
+    position: absolute;
+
+    top: 0%;
+
+    width: 26%;
+    height: 100%;
+}
+
+#cute_stick {
+    left: -1%;
+
+    top: -30%;
+
+    opacity: 0%;
+    display: none;
+}
+
+#family_stick {
+    right: 46%;
+
+    top: -30%;
+
+    opacity: 0%;
+    display: none;
+}
+
+#cute,
+#family {
+    position: absolute;
+
+    top: 0%;
+
+    width: 26%;
+    height: 100%;
+}
+
+#cute {
+    left: -1%;
+}
+
+#family {
+    right: 46%;
+}
+
+.frame1,
+.picture {
+    left: -1%;
+    top: 0;
+
+    position: absolute;
+}
+
+.middle {
+    position: absolute;
+
+    left: 10%;
+    top: 38.5%;
+
+    width: 80%;
+    height: 21.3%;
+}
+
+.note {
+    position: absolute;
+
+    top: -50%;
+    left: 61%;
+
+    width: 16%;
+    height: 15%;
+}
+
+.bottom {
+    position: absolute;
+
+    left: 8%;
+    top: 68%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.7%;
+
+    width: 84%;
+    height: 29%;
+}
+
+.bottom>.item {
+    width: 35%;
+    height: 65%;
+}
+
+.character-box {
+    position: absolute;
+
+    left: 77%;
+    top: 120%;
+
+    width: 16%;
+    height: 54%;
+
+    z-index: 1;
+}
+
+#character {
+    position: absolute;
+
+    left: 0%;
+    top: 0%;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+
+    top: 100%;
+    left: 4%;
+
+    width: 92.5%;
+    height: 38.5%;
+}
+
+.overlay>h1 {
+    position: absolute;
+
+    left: 3%;
+    top: 11%;
+
+    width: 100%;
+    height: 20%;
+
+    font-size: clamp(1rem, 2.5vw, 3rem);
+    font-weight: bolder;
+}
+
+#line {
+    position: absolute;
+
+    top: 32%;
+    left: 3%;
+
+    width: 100%;
+    height: 76%;
+
+    font-size: clamp(0.8rem, 1.9vw, 2.3rem);
+    font-weight: lighter;
+
+    opacity: 100%;
+}
+
+#line>span {
+    font-size: clamp(0.7rem, 1.5vw, 2.1rem);
+}
+
+.whitebox {
+    opacity: 100%;
+
+    position: absolute;
+
+    width: 100%;
+    aspect-ratio: 34 / 16;
+
+    background-color: #fff;
+
+    z-index: 99;
+
+    display: none;
+}
