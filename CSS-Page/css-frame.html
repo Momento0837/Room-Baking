@@ -7,41 +7,49 @@
     <link rel="stylesheet" href="style/css-frame.css" type="text/css">
 </head>
 <body>
+    <!-- 화면전환용 흰 배경 -->
     <div class="whitebox"></div>
+
+    <!-- 메인 -->
     <div class="main">
-        <div class="frame">
+        <div class="frame"> <!-- 액자 R -->
             <img src="images/lady_character.png" alt="Frame" class="frameimg">
         </div>
-        <div class="frame">
+        <div class="frame"> <!-- 액자 G -->
             <img src="images/jump_character.png" alt="Frame" class="frameimg">
         </div>
-        <div class="frame">
+        <div class="frame"> <!-- 액자 B -->
             <img src="images/character_family.png" alt="Frame" class="frameimg">
         </div>
 
         <div class="box block">
-            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <img src="images/block3-css.png" alt="Block" class="blockimg"> <!-- 코드 입력창 이미지 -->
+
+            <!-- 조건 -->
             <p class="condition" id="condition">
                 <span>🚨 액자가 너무 각짐!</span>
             </p>
+
+            <!-- 정답 입력 -->
             <p class="answer" id="answer">
             </p>
-            <p id="stick-answer"></p>
-            <input id="rtext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+            <p id="stick-answer"></p> <!-- 빗자루 정답 예시 -->
+            <input id="rtext" type="text" placeholder="입력 후 엔터!" autocomplete="off"> <!-- 플레이어 정답 입력 -->
 
         </div>
         
-        <div class="character-box"><img src="images/character_smile.png" alt="캐릭터" id="character"></div>
-        <div class="overlay">
-            <img src="images/block2-css.png" alt="투명박스" id="chat">
+        <div class="character-box"><img src="images/character_smile.png" alt="캐릭터" id="character"></div> <!-- 캐릭터 이미지 -->
+        <div class="overlay"> <!-- 말풍선 -->
+            <img src="images/block2-css.png" alt="투명박스" id="chat"> <!-- 말풍선 이미지 -->
 
-            <h1 id="h1">빗자루</h1>
+            <h1 id="h1">빗자루</h1> <!-- 이름 -->
             <a href="#">
-                <p id="line">자, 이번에는 액자야.</p>
+                <p id="line">자, 이번에는 액자야.</p> <!-- 대사 -->
             </a>
         </div>
     </div>
 
+    <!-- 스크립트 연결 -->
     <script src="../JS/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="script/css-frame.js"></script>

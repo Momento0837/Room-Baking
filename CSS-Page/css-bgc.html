@@ -9,36 +9,46 @@
 </head>
 
 <body>
+    <!-- 화면전환용 흰 배경 -->
     <div class="whitebox"></div>
-    <div class="main">
+
+    <div class="main"> <!-- 메인 -->
+
         <div class="box block">
-            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <img src="images/block3-css.png" alt="Block" class="blockimg"> <!-- 코드 입력창 이미지 -->
+            
+            <!-- 조건 -->
             <p class="condition" id="condition">
                 ✅ 배경색은 <span>" #ffc2c2 "</span> 입니다.
             </p>
+            
+            <!-- 정답 입력 -->
             <p class="answer" id="answer"><span>body </span>{
                 <br>      background-color:                        ;
                 <br>}
             </p>
-            <p id="stick-answer"></p>
-            <input id="bgctext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+            <p id="stick-answer"></p> <!-- 빗자루 정답 예시 -->
+            <input id="bgctext" type="text" placeholder="입력 후 엔터!" autocomplete="off"> <!-- 플레이어 정답 입력 -->
 
         </div>
 
+        <!-- 브러쉬 -->
         <div class="brush">
             <img src="images/brush.png" alt="Brush" class="brushimg">
         </div>
-        <div class="character-box"><img src="images/character_happy.png" alt="캐릭터" id="character"></div>
-        <div class="overlay">
-            <img src="images/block2-css.png" alt="투명박스" id="chat">
 
-            <h1 id="h1">빗자루</h1>
+        <div class="character-box"><img src="images/character_happy.png" alt="캐릭터" id="character"></div> <!-- 캐릭터 이미지 -->
+        <div class="overlay"> <!-- 말풍선 -->
+            <img src="images/block2-css.png" alt="투명박스" id="chat"> <!-- 말풍선 이미지 -->
+
+            <h1 id="h1">빗자루</h1> <!-- 이름 -->
             <a href="#">
-                <p id="line">안녕 안녕~ 또 보네!</p>
+                <p id="line">안녕 안녕~ 또 보네!</p> <!-- 대사 -->
             </a>
         </div>
     </div>
 
+    <!-- 스크립트 연결 -->
     <script src="../JS/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="script/css-bgc.js"></script>

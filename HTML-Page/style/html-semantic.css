@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -108,6 +111,10 @@ body {
     }
 }
 
+
+/* 상단바 css =================================================== */
+
+
 .item {
     width: 28%;
     height: 100%;
@@ -159,6 +166,10 @@ body {
     filter: blur(0.4px);
 }
 
+
+/* 코드 입력 블록 css =================================================== */
+
+
 .block {
     position: absolute;
 
@@ -173,6 +184,10 @@ body {
     box-shadow: 0px 6px 10px #1a19193a;
 }
 
+
+/* 책장 css =================================================== */
+
+
 .bookshelf {
     position: absolute;
 
@@ -182,6 +197,8 @@ body {
     width: 40%;
     height: 95%;
 }
+
+/* 상단 */
 
 .top {
     position: absolute;
@@ -212,6 +229,8 @@ body {
     right: 46%;
 }
 
+/* 중간 */
+
 .middle {
     position: absolute;
 
@@ -231,6 +250,8 @@ body {
     width: 16%;
     height: 15%;
 }
+
+/* 하단 */
 
 .bottom {
     position: absolute;
@@ -253,6 +274,10 @@ body {
     height: 65%;
 }
 
+
+/* 화면전환 css =================================================== */
+
+
 .whitebox {
     opacity: 100%;
 
@@ -265,6 +290,10 @@ body {
 
     z-index: 99;
 }
+
+
+/* 캐릭터 css =================================================== */
+
 
 .main-box {
     position: absolute;

@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -110,6 +113,10 @@ body {
     }
 }
 
+
+/* 화이트보드 css =================================================== */
+
+
 .whiteboard {
     position: absolute;
 
@@ -144,6 +151,10 @@ body {
     opacity: 0;
 }
 
+
+/* 마카 css =================================================== */
+
+
 .marker {
     transition: transform 0.3s ease-in-out;
 
@@ -168,6 +179,9 @@ body {
 #blue {
     left: 14%;
 }
+
+
+/* 캐릭터 css =================================================== */
 
 
 .character-box {
@@ -237,6 +251,10 @@ body {
 #line>span {
     font-size: clamp(0.7rem, 1.5vw, 2.1rem);
 }
+
+
+/* 코드 입력 css =================================================== */
+
 
 .block {
     position: absolute;
@@ -354,6 +372,10 @@ body {
     opacity: 0%;
     display: block;
 }
+
+
+/* 화면전환 css =================================================== */
+
 
 .whitebox {
     opacity: 100%;

@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+
+/* 공통 css =================================================== */
+
+
 @font-face {
     font-family: 'NanumSquareNeoLight';
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
@@ -76,6 +80,46 @@ body {
     background-color: var(--bg-color);
 }
 
+@media(min-width: 1300px) {
+    .container {
+        position: relative;
+
+        max-width: 1920px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 1300px) {
+    .container {
+        position: relative;
+
+        max-width: 1300px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 800px) {
+    .container {
+        position: relative;
+
+        max-width: 800px;
+        width: 100%;
+        aspect-ratio: 34 / 16;
+
+        overflow: hidden;
+    }
+}
+
+
+/* 상단 css =================================================== */
+
+
 .item {
     width: 28%;
     height: 100%;
@@ -133,41 +177,9 @@ body {
     filter: blur(0.4px);
 }
 
-@media(min-width: 1300px) {
-    .container {
-        position: relative;
 
-        max-width: 1920px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
+/* 노트 css =================================================== */
 
-        overflow: hidden;
-    }
-}
-
-@media(max-width: 1300px) {
-    .container {
-        position: relative;
-
-        max-width: 1300px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
-
-        overflow: hidden;
-    }
-}
-
-@media(max-width: 800px) {
-    .container {
-        position: relative;
-
-        max-width: 800px;
-        width: 100%;
-        aspect-ratio: 34 / 16;
-
-        overflow: hidden;
-    }
-}
 
 .index {
     display: none;
@@ -215,6 +227,10 @@ body {
     box-shadow: 0 1px 5px black;
 }
 
+
+/* 책장 css =================================================== */
+
+
 .bookshelf {
     position: absolute;
 
@@ -224,6 +240,8 @@ body {
     width: 80%;
     height: 185%;
 }
+
+/* 상단 */
 
 .top {
     position: absolute;
@@ -236,6 +254,8 @@ body {
     width: 80%;
     height: 21.3%;
 }
+
+/* 액자 */
 
 .top>.picture {
     position: absolute;
@@ -290,6 +310,8 @@ body {
     position: absolute;
 }
 
+/* 중간 */
+
 .middle {
     position: absolute;
 
@@ -309,6 +331,8 @@ body {
     width: 16%;
     height: 15%;
 }
+
+/* 하단 */
 
 .bottom {
     position: absolute;
@@ -330,6 +354,11 @@ body {
     width: 35%;
     height: 65%;
 }
+
+
+/* 캐릭터 css =================================================== */
+
+
 
 .character-box {
     position: absolute;
@@ -396,6 +425,11 @@ body {
 #line>span {
     font-size: clamp(0.7rem, 1.5vw, 2.1rem);
 }
+
+
+/* 화면전환 css =================================================== */
+
+
 
 .whitebox {
     opacity: 100%;
