@@ -99,6 +99,14 @@ $(document).ready(function(){
                     line.innerHTML = "조금만 더 힘내서 정리 끝내보자! <br><span>(상단의 Footer탭을 통해 다음으로 이동할 수 있습니다.)</span>";
                 });
 
+                // 카운트 3 이상일 때 footer 클릭시
+                if(count > 2){
+                    $(".sidebar > :nth-child(3)").on("click", function () {
+                        $(".whitebox").css({ display: 'block', opacity: '0%' });
+                        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-footer.html'; });
+                    });
+                }
+
                 // Footer 탭 내려오도록
                 $('.sidebar> :nth-child(3)').stop().animate({ top: '0%' }, mid, 'easeOutQuad');
                 $('.sidebar> :nth-child(2)').stop().animate({ top: '-70%' }, mid, 'easeOutQuad');
@@ -110,14 +118,6 @@ $(document).ready(function(){
                 break;
         }
     });
-
-    // 카운트 3 이상일 때 footer 클릭시
-    if(count > 2){
-        $(".sidebar > :nth-child(3)").on("click", function () {
-            $(".whitebox").css({ display: 'block', opacity: '0%' });
-            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-footer.html'; });
-        });
-    }
     
 
     // 말풍선 함수

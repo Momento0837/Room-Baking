@@ -200,6 +200,15 @@ $(document).ready(function () {
 
             case 16:
                 chating("(Header탭을 눌러, 다음 페이지로 넘어갈 수 있습니다.)");
+                
+                // 카운트 16 이상일 때 Header 클릭시
+                if(count > 15){
+                    $(".sidebar > :first-child").on("click", function () {
+                        $(".whitebox").css({ display: 'block' });
+                        $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-header.html'; });
+                    });
+                }
+                
                 count++;
                 break;
 
@@ -209,13 +218,6 @@ $(document).ready(function () {
 
     }); // 캐릭터 대사 switch문 끝
 
-    // 카운트 16 이상일 때 Header 클릭시
-    if(count > 15){
-        $(".sidebar > :first-child").on("click", function () {
-            $(".whitebox").css({ display: 'block' });
-            $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-header.html'; });
-        });
-    }
 
     // 말풍선 함수
     function chating(text) {
