@@ -7,47 +7,55 @@
     <link rel="stylesheet" href="style/css-whiteboard.css" type="text/css">
 </head>
 <body>
+    <!-- 화면전환용 흰 배경 -->
     <div class="whitebox"></div>
-    <div class="main">
+
+    <div class="main"> <!-- 메인 -->
+
         <div class="box block">
-            <img src="images/block3-css.png" alt="Block" class="blockimg">
+            <img src="images/block3-css.png" alt="Block" class="blockimg"> <!-- 코드 입력창 이미지 -->
+
+            <!-- 조건 -->
             <p class="condition" id="condition">
                 ✅ 검정: <span>#000</span>, 파랑: <span>#0000ff</span>, 빨강: <span>#ff0000</span>
             </p>
+
+            <!-- 정답 입력 -->
             <p class="answer" id="answer">
             </p>
-            <p id="stick-answer"></p>
-            <input id="colortext" type="text" placeholder="입력 후 엔터!" autocomplete="off">
+            <p id="stick-answer"></p> <!-- 빗자루 정답 예시 -->
+            <input id="colortext" type="text" placeholder="입력 후 엔터!" autocomplete="off"> <!-- 플레이어 정답 입력 -->
         </div>
 
-        <div class="whiteboard">
-            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboardimg">
-            <img src="images/calender.png" alt="달력" class="calender" id="calender">
+        <div class="whiteboard"> <!-- 화이트보드 -->
+            <img src="images/whiteboard.png" alt="Whiteboard" class="whiteboardimg"> <!-- 화이트보드 이미지 -->
+            <img src="images/calender.png" alt="달력" class="calender" id="calender"> <!-- 달력 이미지 -->
         </div>
         
-        <div class="marker" id="red">
+        <div class="marker" id="red"> <!-- 빨간색 마커 -->
             <img src="images/Redmarker.png" alt="Marker" class="markerimg">
         </div>
 
-        <div class="marker" id="blue">
+        <div class="marker" id="blue"> <!-- 파란색 마커 -->
             <img src="images/Bluemarker.png" alt="Marker" class="markerimg">
         </div>
 
-        <div class="marker" id="black">
+        <div class="marker" id="black"> <!-- 검은색 마커 -->
             <img src="images/marker.png" alt="Marker" class="markerimg">
         </div>
 
-        <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div>
-        <div class="overlay">
-            <img src="images/block2-css.png" alt="투명박스" id="chat">
+        <div class="character-box"><img src="images/character.png" alt="캐릭터" id="character"></div> <!-- 캐릭터 이미지 -->
+        <div class="overlay"><!-- 말풍선 -->
+            <img src="images/block2-css.png" alt="투명박스" id="chat"> <!-- 말풍선 이미지 -->
 
-            <h1 id="h1">빗자루</h1>
+            <h1 id="h1">빗자루</h1> <!-- 이름 -->
             <a href="#">
-                <p id="line">오, 이번엔 화이트보드!</p>
+                <p id="line">오, 이번엔 화이트보드!</p> <!-- 대사 -->
             </a>
         </div>
     </div>
 
+    <!-- 스크립트 연결 -->
     <script src="../JS/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="script/css-whiteboard.js"></script>
