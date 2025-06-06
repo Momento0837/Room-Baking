@@ -285,6 +285,7 @@ body {
 
     text-align: center;
     font-size: clamp(0.2rem, 1.2vw, 1.6rem);
+    border: 0.3vw;
     border-color: var(--border-color);
     border-style: dashed;
 
@@ -313,6 +314,7 @@ body {
 
     text-align: center;
     font-size: clamp(0.2rem, 1.2vw, 1.6rem);
+    border: 0.3vw;
     border-color: var(--border-color);
     border-style: dashed;
 
