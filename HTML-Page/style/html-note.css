@@ -162,7 +162,7 @@ body {
 .item>a>p {
     position: absolute;
 
-    font-size: clamp(0.3rem, 1.2vw, 1.6rem);
+    font-size: clamp(0.1rem, 1.2vw, 1.6rem);
     font-weight: bold;
 
     text-align: center;
