@@ -23,7 +23,9 @@ document.addEventListener('keydown', (event) => {
         $(".character-box").animate({ top: '18%' }, long, 'easeOutQuad');
 
         // 캐릭터 말풍선 올라가는 모션
-        $(".overlay").animate({ top: '70%' }, long, 'easeOutQuad');
+        $(".overlay").animate({ top: '70%' }, long, 'easeOutQuad', function(){
+            count = 8;
+        });
 
         // 캐릭터 대사
         line.innerText = "";
@@ -201,9 +203,10 @@ $(document).ready(function () {
 
                 $("#stick-answer").animate({ opacity: '100%' }, long, 'easeOutQuad');
                 $("#condition").animate({ opacity: '100%' }, long, 'easeOutQuad');
-                $("#answer").animate({ opacity: '100%' }, long, 'easeOutQuad');
+                $("#answer").animate({ opacity: '100%' }, long, 'easeOutQuad', function(){
+                    count = 30;
+                });
 
-                count++;
                 break;
 
             case 8: // 정답 입력 후
@@ -249,7 +252,7 @@ $(document).ready(function () {
         }
         
         // 카운트가 13 이상일 때 메인 탭을 클릭하면 다음 화면으로
-        if(count > 12){
+        if(count > 12 && count < 30){
             $(".sidebar > :nth-child(2)").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: '100%' }, long, 'easeOutQuad', function () { window.location.href = 'html-main1.html'; });
