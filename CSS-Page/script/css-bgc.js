@@ -1,5 +1,7 @@
 const brush = document.querySelector('.brush');
 
+let count = 0;
+
 // 애니메이션용 상수 선언
 const superlong = 2000;
 const long = 1300;
@@ -80,6 +82,8 @@ document.addEventListener('keydown', (event) => {
         $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
             line.innerText = "";
             line.innerText = "역시 똑똑해~";
+
+            count = 17;
         });
         $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
 
@@ -123,7 +127,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const line = document.getElementById("line");
     const bubble = document.getElementById("chat");
     const stick = document.getElementById("h1");
-    let count = 0;
 
     line.addEventListener("click", () => {
         switch (count) {
@@ -255,6 +258,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 16:
+                count = 30;
+
                 // 캐릭터, 빗자루 정답, 조건, css코드, 대사, 이름 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
                 $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
@@ -312,7 +317,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         // 카운트가 20 이상이라면 채팅창을 클릭했을 때 다음 화면으로
-        if (count > 19) {
+        if (count > 19 && count < 30) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-frame.html'; });

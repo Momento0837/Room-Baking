@@ -4,6 +4,8 @@ const long = 1300;
 const mid = 600;
 const short = 300;
 
+let count = 0;
+
 // 정답 상수 선언
 const lanswer = "30%";
 
@@ -28,6 +30,7 @@ document.addEventListener('keydown', (event) => {
         $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
             line.innerText = "";
             line.innerText = "와, 박수 박수!";
+            count = 14;
         });
         $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
 
@@ -60,7 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const line = document.getElementById("line");
     const bubble = document.getElementById("chat");
     const stick = document.getElementById("h1");
-    let count = 0;
 
     line.addEventListener("click", () => {
         switch (count) {
@@ -207,6 +209,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 13:
+                count = 30;
                 character.src = "images/character_happy.png";
                 chating("부탁할게! *^^*");
 
@@ -236,72 +239,68 @@ window.addEventListener('DOMContentLoaded', () => {
                         $("#h1").animate({ opacity: 1 }, long, 'easeOutQuad');
                     });
                 }, 1000);
-                count++;
                 break;
 
-            case 14:
-                // 두번 클릭하는 것 방지용
-                count++;
-                break;
-
-            case 15: // 입력 후
+            case 14: // 입력 후
                 chating("완전 천하장사네 천하장사!");
                 count++;
                 break;
 
-            case 16:
+            case 15:
                 character.src = "images/character.png";
                 chating("이렇게 left는 위치를 조정하는 속성이야.");
                 count++;
                 break;
 
-            case 17:
+            case 16:
                 chating("양수로도 사용할 수 있고, 음수도 가능해!");
                 count++;
                 break;
 
             // 모든 방정리 끝나고 아웃트로 멘트 진행
-            case 18:
+            case 17:
+                count = 30;
                 // 가장 처음 화면 비율로 되돌림
                 $(".character-box").animate({ left: '77%', top: '22%' }, long, 'easeOutQuad');
                 $(".overlay").animate({ left: '4%', top: '55%', width: '92.5%', height: '38.5%' }, long, 'easeOutQuad');
                 $(".block").animate({ top: '-50%' }, long, 'easeOutQuad', function () {
                     character.src = "images/character_smile.png";
                     chating("휴~ 이제 정리가 완전 끝났어.");
+                    count = 19;
                 });
                 count++;
                 break;
 
-            case 19:
+            case 18:
                 chating("어때, 유익했던 시간인 것 같아?");
                 count++;
                 break;
 
-            case 20:
+            case 19:
                 character.src = "images/character_notangry.png";
                 chating("여기까지 오는 데 꽤 오래 걸렸네.");
                 count++;
                 break;
 
-            case 21:
+            case 20:
                 character.src = "images/character.png";
                 chating("그래도 재밌었던 것 같아.");
                 count++;
                 break;
 
-            case 22:
+            case 21:
                 character.src = "images/character_notangry.png";
                 chating("... 나만 그런가?");
                 count++;
                 break;
 
-            case 23:
+            case 22:
                 character.src = "images/character_happy.png";
                 chating("아무튼, 수고 많았어. 이제 쉬러 가자!");
                 count++;
                 break;
 
-            case 24:
+            case 23:
                 $("#line").animate({ opacity: 0 }, short, 'easeOutQuad', () => {
                     $("#line").html('(캐릭터를 클릭하여 메인화면으로 이동할 수 있습니다.)');
                 });
@@ -315,7 +314,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         // 카운트가 25 이상이면 캐릭터를 클릭했을 때 메인화면으로 이동
-        if (count > 24) {
+        if (count > 23 && count < 30) {
             $(".character-box").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = '../../index.html'; });

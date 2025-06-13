@@ -4,6 +4,8 @@ const long = 1300;
 const mid = 600;
 const short = 300;
 
+let count = 0;
+
 // 정답 상수 선언
 const h2answer = "교과서와 공책";
 const h3answer = "잡동사니";
@@ -55,7 +57,9 @@ document.addEventListener('keydown', (event) => {
         $(".character-box").animate({top: '18%'}, long, 'easeOutQuad');
 
         // 캐릭터 말풍선 올라가는 모션
-        $(".overlay").animate({top: '70%'}, long, 'easeOutQuad');
+        $(".overlay").animate({top: '70%'}, long, 'easeOutQuad', function(){
+            count = 7;
+        });
 
         // 캐릭터 대사
         line.innerText = "";
@@ -133,7 +137,6 @@ $(document).ready(function () {
     const character = document.getElementById("character");
     const line = document.getElementById("line");
     const chat = document.getElementById("chat");
-    let count = 0;
     let origintext = line.innerText;
 
     setTimeout(() => {
@@ -222,6 +225,8 @@ $(document).ready(function () {
                 break;
 
             case 6:
+                count = 30;
+
                 // 캐릭터 아래로 내려가는 모션
                 $(".character-box").animate({ top: '120%' }, superlong, 'easeOutQuad', () => {
                     $(".main-box").hide();
@@ -293,7 +298,7 @@ $(document).ready(function () {
         }
 
         // 카운트가 11 이상일 때 캐릭터를 클릭하면 메인화면으로
-        if(count > 10){
+        if(count > 10 && count < 30){
             $(".character-box").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = '../index.html'; });

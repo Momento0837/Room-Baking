@@ -4,6 +4,8 @@ const long = 1300;
 const mid = 600;
 const short = 300;
 
+let count = 0;
+
 // 정답 상수 선언
 const imganswer = "family_stick.png";
 
@@ -101,7 +103,6 @@ $(document).ready(function () {
     const character = document.getElementById("character");
     const line = document.getElementById("line");
     const chat = document.getElementById("chat");
-    let count = 0;
     let origintext = line.innerText;
 
     setTimeout(() => {
@@ -174,7 +175,8 @@ $(document).ready(function () {
                 break;
 
             case 7:
-
+                
+                count = 30;
                 // 캐릭터 아래로 내려가는 모션
                 $(".character-box").animate({ top: '120%' }, long, 'easeOutQuad', () => {
                     $(".main-box").hide();
@@ -203,9 +205,7 @@ $(document).ready(function () {
 
                 $("#stick-answer").animate({ opacity: '100%' }, long, 'easeOutQuad');
                 $("#condition").animate({ opacity: '100%' }, long, 'easeOutQuad');
-                $("#answer").animate({ opacity: '100%' }, long, 'easeOutQuad', function(){
-                    count = 30;
-                });
+                $("#answer").animate({ opacity: '100%' }, long, 'easeOutQuad');
 
                 break;
 

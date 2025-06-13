@@ -4,6 +4,8 @@ const long = 1300;
 const mid = 600;
 const short = 300;
 
+let count = 0;
+
 // 정답 상수 선언
 const r1answer = "30%";
 const r2answer = "50%";
@@ -11,6 +13,9 @@ const r2answer = "50%";
 // 정답을 입력하고 엔터를 눌렀을 때
 document.addEventListener('keydown', (event) => {
     const rtext = document.getElementById('rtext');
+
+    $("#stick-answer").css({opacity: 0});
+
     if (document.activeElement !== rtext) return; // input창에 커서 안 두고 있으면 진행 x
 
     const useranswer = rtext.value; // input에서 받은 값을 상수에 저장
@@ -58,6 +63,7 @@ document.addEventListener('keydown', (event) => {
         $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
             line.innerText = "";
             line.innerText = "둥그니까 보기 좋네~";
+            count = 9;
         });
         $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
     }
@@ -88,7 +94,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const character = document.getElementById("character");
     const bubble = document.getElementById("chat");
     const stick = document.getElementById("h1");
-    let count = 0;
+    let timeout;
 
     $("#line").on("click", () => {
         switch (count) {
@@ -188,7 +194,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 });
 
                 // 1.2초 이후 캐릭터 대사 변경
-                setTimeout(function () { chating("둥글게 만들 수 있어."); }, 1200);
+                timeout = setTimeout(function () { chating("둥글게 만들 수 있어."); }, 1200);
 
                 count++;
                 break;
@@ -199,9 +205,14 @@ window.addEventListener('DOMContentLoaded', function () {
                 break;
 
             case 8:
+                count = 30;
+
+                $(".frame:nth-child(1)").stop();
+                clearTimeout(timeout);
+
                 // 캐릭터, 빗자루 정답, 말풍선, css코드 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
-                $("#stick-answer").animate({ opacity: 0 }, long, 'easeOutQuad');
+                $("#stick-answer").stop().animate({ opacity: 0 }, long, 'easeOutQuad');
                 $(".condition").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
                     // 조건 변경 후 페이드인
                     $(".condition").html('✅ Radius는 <span>" 30% "</span> 입니다.');
@@ -227,7 +238,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 $(".frame:nth-child(3)").animate({ left: '60.5%' }, long, 'easeOutQuad');
 
                 // 나레이션으로 대사 변경
-                $("#line").animate({ opacity: 0 }, long, 'easeOutQuad', () => {
+                $("#line").stop().animate({ opacity: 0 }, long, 'easeOutQuad', () => {
                     line.innerText = "";
                     line.innerHTML = '<span>Border-radius는 물체의 모서리를 둥글게 만들 수 있는 속성입니다.<br><br>값이 클수록 둥글게 만듭니다.</span>';
                 });
@@ -272,7 +283,7 @@ window.addEventListener('DOMContentLoaded', function () {
         }
 
         // 카운트가 14 이상일 때 채팅창 클릭하면 다음화면으로 이동
-        if (count > 13) {
+        if (count > 13 && count < 30) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-whiteboard.html'; });

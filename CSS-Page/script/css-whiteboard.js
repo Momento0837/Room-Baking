@@ -7,6 +7,9 @@ const long = 1300;
 const mid = 600;
 const short = 300;
 
+let count = 0;
+let timeout;
+
 // 플레이어가 색상을 고르고, 해당하는 마카의 id를 저장하기 위한 전역 변수
 var marker_color = null;
 
@@ -70,6 +73,8 @@ document.addEventListener('keydown', (event) => {
             line.innerText = "어때~ 어떤 색 골랐어?";
         });
         $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
+
+        count = 9;
     }
 });
 
@@ -116,7 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const line = document.getElementById("line");
     const bubble = document.getElementById("chat");
     const stick = document.getElementById("h1");
-    let count = 0;
 
     line.addEventListener("click", () => {
         switch (count) {
@@ -190,6 +194,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 8:
+                count = 30;
+
                 // 캐릭터, 말풍선 페이드아웃
                 $(".character-box").animate({ opacity: 0 }, long, 'easeOutQuad');
                 $(".overlay > h1").animate({ opacity: 0 }, long, 'easeOutQuad', function () {
@@ -236,7 +242,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     line.innerHTML = '<span>color는 텍스트의 색상을 변경할 수 있는 속성입니다.<br><br>RGB, HSV, HEXcode 등으로 지정 가능합니다.</span>';
                 });
                 $("#line").animate({ opacity: 1 }, long, 'easeOutQuad');
-                count++;
+
                 break;
 
             case 9: // 입력 후
@@ -253,6 +259,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 break;
 
             case 11:
+                count = 30;
+
                 // 마카 클릭할 수 있다는 걸 강조
                 console.log(marker_color);
                 $(marker_color).animate({ width: '2.5%', height: '22%' }, short, 'easeOutQuad', () => {
@@ -262,6 +270,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         });
                     });
                 });
+                
                 count++;
                 break;
 
@@ -342,14 +351,15 @@ window.addEventListener('DOMContentLoaded', () => {
             }, 500);
 
             // 3초 이후 캐릭터 대사 변경
-            setTimeout(function () {
+            timeout = setTimeout(function () {
                 character.src = "images/character.png";
                 chating("어때? 마음에 들어?");
+                count = 12;
             }, 3000);
         });
 
         // 카운트가 19 이상일 때 채팅창을 클릭하면 다음 화면으로
-        if (count > 18) {
+        if (count > 18 && count < 30) {
             $("#line").on("click", function () {
                 $(".whitebox").css({ display: 'block' });
                 $(".whitebox").animate({ opacity: 1 }, long, 'easeOutQuad', function () { window.location.href = 'css-monitor.html'; });
